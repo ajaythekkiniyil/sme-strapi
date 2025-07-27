@@ -1,0 +1,36 @@
+{
+  "name": "sme-strapi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "scripts": {
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "5.19.0",
+    "@strapi/plugin-users-permissions": "5.19.0",
+    "@strapi/strapi": "5.19.0",
+    "better-sqlite3": "11.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "c0d91c42-acf3-4bba-a3bb-1a5b7f54419a",
+    "installId": "46e639960ab1b566997d085fa9c67f11d2afae153d0b4392cd3dfc6ad52fc474"
+  }
+}
