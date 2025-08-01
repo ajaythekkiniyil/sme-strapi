@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "basic_enquiries",
+  "info": {
+    "singularName": "basic-enquiry",
+    "pluralName": "basic-enquiries",
+    "displayName": "Basic Enquiry"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "businessNumber": {
+      "type": "biginteger"
+    },
+    "businessEmail": {
+      "type": "email"
+    },
+    "location": {
+      "type": "text"
+    },
+    "field": {
+      "type": "string"
+    },
+    "enquiry": {
+      "type": "text"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}
