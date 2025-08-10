@@ -385,7 +385,7 @@ export interface ApiBasicEnquiryBasicEnquiry
     draftAndPublish: true;
   };
   attributes: {
-    attachment: Schema.Attribute.Media<'images' | 'files'>;
+    attachments: Schema.Attribute.Media<'images' | 'files', true>;
     businessEmail: Schema.Attribute.Email;
     businessNumber: Schema.Attribute.BigInteger;
     company: Schema.Attribute.String;

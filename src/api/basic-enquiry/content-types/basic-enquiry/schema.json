@@ -36,9 +36,9 @@
     "enquiry": {
       "type": "text"
     },
-    "attachment": {
+    "attachments": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "allowedTypes": [
         "images",
         "files"
