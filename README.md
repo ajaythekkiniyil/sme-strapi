@@ -59,3 +59,21 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 ---
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+
+## Points to remember
+1. env
+2. AWS SES
+https://docs.aws.amazon.com/ses/latest/dg/request-production-access.html
+strapi-ses-user@1
+
+"dev": "NODE_ENV=development env-cmd -f .env.development strapi develop",
+"prod": "NODE_ENV=production env-cmd -f .env.production strapi start",
+
+config/
+  env/
+    development/
+      database.ts
+    production/
+      database.ts
+
+stashed -> aws-ses
