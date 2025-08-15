@@ -410,6 +410,47 @@ export interface ApiBasicEnquiryBasicEnquiry
   };
 }
 
+export interface ApiSmeApplicationSmeApplication
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'sme_applications';
+  info: {
+    displayName: 'SME Application';
+    pluralName: 'sme-applications';
+    singularName: 'sme-application';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email;
+    experience: Schema.Attribute.String;
+    expertiseAreas: Schema.Attribute.String;
+    fullName: Schema.Attribute.String;
+    languageSpoken: Schema.Attribute.String;
+    linkedinUrl: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sme-application.sme-application'
+    > &
+      Schema.Attribute.Private;
+    pastCompanies: Schema.Attribute.String;
+    phone: Schema.Attribute.BigInteger;
+    publishedAt: Schema.Attribute.DateTime;
+    resume: Schema.Attribute.Media<'files'>;
+    smeStatus: Schema.Attribute.Enumeration<
+      ['pending', 'approved', 'rejected']
+    > &
+      Schema.Attribute.DefaultTo<'pending'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -920,6 +961,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::basic-enquiry.basic-enquiry': ApiBasicEnquiryBasicEnquiry;
+      'api::sme-application.sme-application': ApiSmeApplicationSmeApplication;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

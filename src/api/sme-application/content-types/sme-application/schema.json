@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sme_applications",
+  "info": {
+    "singularName": "sme-application",
+    "pluralName": "sme-applications",
+    "displayName": "SME Application"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullName": {
+      "type": "string",
+      "required": false
+    },
+    "email": {
+      "type": "email",
+      "required": false
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "linkedinUrl": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "pastCompanies": {
+      "type": "string"
+    },
+    "expertiseAreas": {
+      "type": "string"
+    },
+    "languageSpoken": {
+      "type": "string"
+    },
+    "resume": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "smeStatus": {
+      "type": "enumeration",
+      "required": false,
+      "default": "pending",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ]
+    }
+  }
+}
