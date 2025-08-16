@@ -414,7 +414,7 @@ export interface ApiSmeApplicationSmeApplication
   extends Struct.CollectionTypeSchema {
   collectionName: 'sme_applications';
   info: {
-    displayName: 'SME Application';
+    displayName: 'SME Applications';
     pluralName: 'sme-applications';
     singularName: 'sme-application';
   };
@@ -441,9 +441,7 @@ export interface ApiSmeApplicationSmeApplication
     phone: Schema.Attribute.BigInteger;
     publishedAt: Schema.Attribute.DateTime;
     resume: Schema.Attribute.Media<'files'>;
-    smeStatus: Schema.Attribute.Enumeration<
-      ['pending', 'approved', 'rejected']
-    > &
+    smeStatus: Schema.Attribute.Enumeration<['pending', 'rejected', 'active']> &
       Schema.Attribute.DefaultTo<'pending'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

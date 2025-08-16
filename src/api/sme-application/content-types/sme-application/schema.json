@@ -4,7 +4,7 @@
   "info": {
     "singularName": "sme-application",
     "pluralName": "sme-applications",
-    "displayName": "SME Application"
+    "displayName": "SME Applications"
   },
   "options": {
     "draftAndPublish": true
@@ -50,8 +50,8 @@
       "default": "pending",
       "enum": [
         "pending",
-        "approved",
-        "rejected"
+        "rejected",
+        "active"
       ]
     }
   }
