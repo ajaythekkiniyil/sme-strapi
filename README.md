@@ -77,3 +77,113 @@ config/
       database.ts
 
 stashed -> aws-ses
+
+need to update naming sme application
+
+attachments frontend missing
+
+
+
+✅ A separate SME application form, with document upload, vetting workflow
+✅ Admin review/approval process before SME becomes active
+2. No Mention of Payment Handling
+For KaaS, you’ll likely:
+•	Charge clients per ticket or service tier
+•	Pay SMEs per response or hourly
+But payment processing (Stripe, PayPal) is missing.
+✅ Add future-ready modules for:
+•	Client payments
+•	SME compensation tracking
+•	Invoice generation or receipts
+3. No Communication Preview or Collaboration
+Your SMEs will respond via:
+•	Written documents
+•	Possibly Zoom calls
+But current system shows only “Respond to Ticket” — is this:
+•	A chat window?
+•	A file upload system?
+•	A structured template response?
+✅ Clarify how SMEs deliver value: via file, form, or Zoom links
+Add: Upload field + status tags like “Needs Clarification”, “Pending Payment”, “Delivered”
+4. Client Experience Could Be Enhanced
+What will the client see after submitting the question?
+•	Will they get an email confirmation?
+•	Will they see “Estimated delivery: 48 hrs”?
+✅ Fix: Add customer-facing views:
+•	Timeline tracker or progress bar
+•	“Download response” button
+•	Feedback/rating mechanism for SMEs
+5. Admin Reporting Is Basic
+Current reporting includes basic stats.
+✅ Add:
+•	Ticket turnaround time (avg hours per SME)
+•	Most requested topics (helps your marketing)
+•	SME ratings or feedback (quality control)
+ 
+
+SME Onboarding Module – End to End Flow 
+Objectives:
+Allow professionals to apply to become SMEs , vet their credenials , approve or reject them, and activate them into the system.
+1. SME Application Form (Public-Facing)
+Frontend Form Fields:
+•	Full Name
+•	Email
+•	Phone number
+•	LinkedIn URL
+•	Years of experience (dropdown: 10–15, 15–20, etc.)
+•	Past companies (e.g., ADNOC, Aramco, BH)
+•	Areas of expertise (multi-select)
+•	Languages spoken
+•	CV upload (PDF/DOC)
+•	Optional: Technical sample (sanitized report or article)
+•	Preferred engagement types:
+o	📄 Written brief
+o	📞 Live call (Zoom)
+o	🧑‍🏫 Mentoring/training
+•	Expected rate (optional at MVP)
+•	✅ Agree to NDA (checkbox)
+🛠 Store in Strapi CMS under sme_applications with status: pending, approved, rejected.
+________________________________________
+✅ 2. Admin Review & Vetting Panel
+In your Admin Dashboard:
+•	View list of new SME applications
+•	Filters: pending / approved / rejected
+•	Columns: Name | Experience | Companies | Areas of Expertise | Status
+•	View full application details (expandable panel)
+•	Attach internal notes: e.g., “Requested a call for clarification”
+•	Approve / Reject toggle
+🛠 Store decision, date, and reviewer ID in Strapi
+________________________________________
+✅ 3. Optional: Auto-Scheduling Interview (Later Stage)
+If manual vetting is needed:
+•	After application, send Calendly link to schedule a 15-min Zoom call
+•	Add a field to admin panel: "Interview Status: scheduled / completed"
+________________________________________
+✅ 4. Approval Trigger: Email + Account Setup
+If approved:
+•	Send onboarding email with:
+o	Link to log in
+o	Default password (with reset)
+o	SME Code of Conduct / Response Guidelines
+•	Create their user profile in the dashboard:
+o	Role: SME
+o	Status: Active
+o	Assigned categories: e.g., Drilling / Contracts
+o	Language preference
+🛠 Use Strapi User roles and integrate into dashboard auth (NextAuth, etc.)
+________________________________________
+✅ 5. SME Dashboard (Post-Login)
+Once onboarded, SMEs can:
+•	Update their profile (bio, languages, availability)
+•	View assigned tickets
+•	Submit responses
+•	Track payments (future enhancement)
+•	View rating/feedback (if applicable)
+________________________________________
+🧩 Bonus Features (Phase 2+)
+Feature	Benefit
+SME performance analytics	Helps you identify top contributors
+Pre-written response templates	Ensures consistent quality
+Language tag matching	Match Arabic speakers to regional requests
+Auto-expire inactive SMEs	Keeps network active and relevant
+
