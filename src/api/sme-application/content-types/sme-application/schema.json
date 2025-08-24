@@ -53,6 +53,10 @@
         "rejected",
         "active"
       ]
+    },
+    "emailVerified": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

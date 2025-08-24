@@ -426,6 +426,7 @@ export interface ApiSmeApplicationSmeApplication
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     email: Schema.Attribute.Email;
+    emailVerified: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     experience: Schema.Attribute.String;
     expertiseAreas: Schema.Attribute.String;
     fullName: Schema.Attribute.String;
