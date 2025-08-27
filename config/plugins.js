@@ -1,5 +1,12 @@
 module.exports = () => ({
-    documentation: {
+    "documentation": {
         enabled: true,
     },
+    "users-permissions": {
+        config: {
+            register: {
+                allowedFields: ["role", "customRole"],
+            },
+        },
+    }
 });
