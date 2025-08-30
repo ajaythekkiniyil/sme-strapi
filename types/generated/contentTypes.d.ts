@@ -424,6 +424,7 @@ export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    adminVerified: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     attachments: Schema.Attribute.Media<'images' | 'files', true>;
     businessEmail: Schema.Attribute.Email;
     businessNumber: Schema.Attribute.BigInteger;

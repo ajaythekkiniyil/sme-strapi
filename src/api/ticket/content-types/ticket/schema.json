@@ -43,6 +43,10 @@
         "images",
         "files"
       ]
+    },
+    "adminVerified": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
