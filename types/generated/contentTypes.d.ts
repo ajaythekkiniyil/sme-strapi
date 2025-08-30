@@ -373,43 +373,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiBasicEnquiryBasicEnquiry
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'basic_enquiries';
-  info: {
-    displayName: 'Basic Enquiry';
-    pluralName: 'basic-enquiries';
-    singularName: 'basic-enquiry';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    attachments: Schema.Attribute.Media<'images' | 'files', true>;
-    businessEmail: Schema.Attribute.Email;
-    businessNumber: Schema.Attribute.BigInteger;
-    company: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    enquiry: Schema.Attribute.Text;
-    field: Schema.Attribute.String;
-    firstName: Schema.Attribute.String & Schema.Attribute.Required;
-    lastName: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::basic-enquiry.basic-enquiry'
-    > &
-      Schema.Attribute.Private;
-    location: Schema.Attribute.Text;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiSmeApplicationSmeApplication
   extends Struct.CollectionTypeSchema {
   collectionName: 'sme_applications';
@@ -444,6 +407,42 @@ export interface ApiSmeApplicationSmeApplication
     resume: Schema.Attribute.Media<'files'>;
     smeStatus: Schema.Attribute.Enumeration<['pending', 'rejected', 'active']> &
       Schema.Attribute.DefaultTo<'pending'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
+  collectionName: 'tickets';
+  info: {
+    displayName: 'Tickets';
+    pluralName: 'tickets';
+    singularName: 'ticket';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    attachments: Schema.Attribute.Media<'images' | 'files', true>;
+    businessEmail: Schema.Attribute.Email;
+    businessNumber: Schema.Attribute.BigInteger;
+    company: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enquiry: Schema.Attribute.String;
+    field: Schema.Attribute.String;
+    firstName: Schema.Attribute.String & Schema.Attribute.Required;
+    lastName: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ticket.ticket'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -959,8 +958,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::basic-enquiry.basic-enquiry': ApiBasicEnquiryBasicEnquiry;
       'api::sme-application.sme-application': ApiSmeApplicationSmeApplication;
+      'api::ticket.ticket': ApiTicketTicket;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

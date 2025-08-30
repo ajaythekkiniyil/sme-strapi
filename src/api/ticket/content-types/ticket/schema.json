@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "basic_enquiries",
+  "collectionName": "tickets",
   "info": {
-    "singularName": "basic-enquiry",
-    "pluralName": "basic-enquiries",
-    "displayName": "Basic Enquiry"
+    "singularName": "ticket",
+    "pluralName": "tickets",
+    "displayName": "Tickets"
   },
   "options": {
     "draftAndPublish": true
@@ -28,13 +28,13 @@
       "type": "email"
     },
     "location": {
-      "type": "text"
+      "type": "string"
     },
     "field": {
       "type": "string"
     },
     "enquiry": {
-      "type": "text"
+      "type": "string"
     },
     "attachments": {
       "type": "media",
