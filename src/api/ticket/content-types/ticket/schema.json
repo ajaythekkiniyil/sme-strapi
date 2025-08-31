@@ -34,7 +34,7 @@
       "type": "string"
     },
     "enquiry": {
-      "type": "string"
+      "type": "text"
     },
     "attachments": {
       "type": "media",
@@ -47,6 +47,16 @@
     "adminVerified": {
       "type": "boolean",
       "default": false
+    },
+    "paymentStatus": {
+      "type": "enumeration",
+      "default": "pending",
+      "enum": [
+        "pending",
+        "in-progress",
+        "error",
+        "done"
+      ]
     }
   }
 }

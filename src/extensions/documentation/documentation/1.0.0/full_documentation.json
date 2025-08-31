@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-08-30T04:58:16.352Z"
+    "x-generation-date": "2025-08-31T08:56:59.592Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -3599,6 +3599,15 @@
               "adminVerified": {
                 "type": "boolean"
               },
+              "paymentStatus": {
+                "type": "string",
+                "enum": [
+                  "pending",
+                  "in-progress",
+                  "error",
+                  "done"
+                ]
+              },
               "locale": {
                 "type": "string"
               },
@@ -4298,6 +4307,15 @@
           "adminVerified": {
             "type": "boolean"
           },
+          "paymentStatus": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "in-progress",
+              "error",
+              "done"
+            ]
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -4507,6 +4525,15 @@
                 },
                 "adminVerified": {
                   "type": "boolean"
+                },
+                "paymentStatus": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "in-progress",
+                    "error",
+                    "done"
+                  ]
                 },
                 "createdAt": {
                   "type": "string",

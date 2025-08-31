@@ -432,7 +432,7 @@ export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    enquiry: Schema.Attribute.String;
+    enquiry: Schema.Attribute.Text;
     field: Schema.Attribute.String;
     firstName: Schema.Attribute.String & Schema.Attribute.Required;
     lastName: Schema.Attribute.String;
@@ -443,6 +443,10 @@ export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     location: Schema.Attribute.String;
+    paymentStatus: Schema.Attribute.Enumeration<
+      ['pending', 'in-progress', 'error', 'done']
+    > &
+      Schema.Attribute.DefaultTo<'pending'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
