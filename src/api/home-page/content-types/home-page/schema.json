@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero_slider": {
+      "type": "component",
+      "component": "hero-slider.slider-items",
+      "repeatable": true
+    },
+    "How_it_works": {
+      "type": "component",
+      "component": "how-its-work.steps",
+      "repeatable": true
+    },
+    "Why_SME_on_Call": {
+      "type": "component",
+      "component": "why-sme-on-call.block",
+      "repeatable": false
+    },
+    "services": {
+      "type": "component",
+      "component": "services-list.list",
+      "repeatable": false
+    }
+  }
+}

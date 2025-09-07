@@ -373,6 +373,37 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
+  collectionName: 'home_pages';
+  info: {
+    displayName: 'Home Page';
+    pluralName: 'home-pages';
+    singularName: 'home-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero_slider: Schema.Attribute.Component<'hero-slider.slider-items', true>;
+    How_it_works: Schema.Attribute.Component<'how-its-work.steps', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-page.home-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    services: Schema.Attribute.Component<'services-list.list', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Why_SME_on_Call: Schema.Attribute.Component<'why-sme-on-call.block', false>;
+  };
+}
+
 export interface ApiSmeApplicationSmeApplication
   extends Struct.CollectionTypeSchema {
   collectionName: 'sme_applications';
@@ -389,23 +420,26 @@ export interface ApiSmeApplicationSmeApplication
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     email: Schema.Attribute.Email;
-    emailVerified: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    email_verified: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     experience: Schema.Attribute.String;
-    expertiseAreas: Schema.Attribute.String;
-    fullName: Schema.Attribute.String;
-    languageSpoken: Schema.Attribute.String;
-    linkedinUrl: Schema.Attribute.String;
+    expertise_areas: Schema.Attribute.String;
+    full_name: Schema.Attribute.String;
+    language_spoken: Schema.Attribute.String;
+    linkedin_url: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::sme-application.sme-application'
     > &
       Schema.Attribute.Private;
-    pastCompanies: Schema.Attribute.String;
+    past_companies: Schema.Attribute.String;
     phone: Schema.Attribute.BigInteger;
     publishedAt: Schema.Attribute.DateTime;
     resume: Schema.Attribute.Media<'files'>;
-    smeStatus: Schema.Attribute.Enumeration<['pending', 'rejected', 'active']> &
+    sme_status: Schema.Attribute.Enumeration<
+      ['pending', 'rejected', 'active']
+    > &
       Schema.Attribute.DefaultTo<'pending'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -424,18 +458,19 @@ export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    adminVerified: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    admin_verified: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     attachments: Schema.Attribute.Media<'images' | 'files', true>;
-    businessEmail: Schema.Attribute.Email;
-    businessNumber: Schema.Attribute.BigInteger;
+    business_email: Schema.Attribute.Email;
+    business_number: Schema.Attribute.BigInteger;
     company: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     enquiry: Schema.Attribute.Text;
     field: Schema.Attribute.String;
-    firstName: Schema.Attribute.String & Schema.Attribute.Required;
-    lastName: Schema.Attribute.String;
+    first_name: Schema.Attribute.String & Schema.Attribute.Required;
+    last_name: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -443,7 +478,7 @@ export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     location: Schema.Attribute.String;
-    paymentStatus: Schema.Attribute.Enumeration<
+    payment_status: Schema.Attribute.Enumeration<
       ['pending', 'in-progress', 'error', 'done']
     > &
       Schema.Attribute.DefaultTo<'pending'>;
@@ -963,6 +998,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::home-page.home-page': ApiHomePageHomePage;
       'api::sme-application.sme-application': ApiSmeApplicationSmeApplication;
       'api::ticket.ticket': ApiTicketTicket;
       'plugin::content-releases.release': PluginContentReleasesRelease;

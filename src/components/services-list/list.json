@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_services_list_lists",
+  "info": {
+    "displayName": "List"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sub_title": {
+      "type": "string"
+    },
+    "Services": {
+      "type": "component",
+      "component": "service-cards.card-items",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

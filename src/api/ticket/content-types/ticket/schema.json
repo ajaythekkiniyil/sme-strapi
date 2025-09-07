@@ -11,20 +11,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "firstName": {
+    "first_name": {
       "type": "string",
       "required": true
     },
-    "lastName": {
+    "last_name": {
       "type": "string"
     },
     "company": {
       "type": "string"
     },
-    "businessNumber": {
+    "business_number": {
       "type": "biginteger"
     },
-    "businessEmail": {
+    "business_email": {
       "type": "email"
     },
     "location": {
@@ -44,11 +44,11 @@
         "files"
       ]
     },
-    "adminVerified": {
+    "admin_verified": {
       "type": "boolean",
       "default": false
     },
-    "paymentStatus": {
+    "payment_status": {
       "type": "enumeration",
       "default": "pending",
       "enum": [

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_service_cards_card_items",
+  "info": {
+    "displayName": "Card-items"
+  },
+  "options": {},
+  "attributes": {
+    "background_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "service_title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

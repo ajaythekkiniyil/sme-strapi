@@ -11,7 +11,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "fullName": {
+    "full_name": {
       "type": "string",
       "required": false
     },
@@ -22,19 +22,19 @@
     "phone": {
       "type": "biginteger"
     },
-    "linkedinUrl": {
+    "linkedin_url": {
       "type": "string"
     },
     "experience": {
       "type": "string"
     },
-    "pastCompanies": {
+    "past_companies": {
       "type": "string"
     },
-    "expertiseAreas": {
+    "expertise_areas": {
       "type": "string"
     },
-    "languageSpoken": {
+    "language_spoken": {
       "type": "string"
     },
     "resume": {
@@ -44,7 +44,7 @@
         "files"
       ]
     },
-    "smeStatus": {
+    "sme_status": {
       "type": "enumeration",
       "required": false,
       "default": "pending",
@@ -54,7 +54,7 @@
         "active"
       ]
     },
-    "emailVerified": {
+    "email_verified": {
       "type": "boolean",
       "default": false
     }

@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_hero_slider_slider_items",
+  "info": {
+    "displayName": "Slider items",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "pre_highlight_text": {
+      "type": "string",
+      "required": true
+    },
+    "highlighted_text": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "background_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "primary_button_text": {
+      "type": "string",
+      "required": true
+    },
+    "primary_button_link": {
+      "type": "string",
+      "default": "#",
+      "required": true
+    },
+    "secondary_button_text": {
+      "type": "string",
+      "required": true
+    },
+    "secondary_button_link": {
+      "type": "string",
+      "default": "#",
+      "required": true
+    }
+  },
+  "config": {}
+}
