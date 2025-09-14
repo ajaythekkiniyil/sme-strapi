@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-09-13T15:38:17.228Z"
+    "x-generation-date": "2025-09-14T06:54:31.221Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -2834,29 +2834,11 @@
           "data": {
             "type": "object",
             "properties": {
-              "Hero_slider": {
+              "Hero_section": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/HeroSliderSliderItemsComponent"
+                  "$ref": "#/components/schemas/HeroSectionSlidersComponent"
                 }
-              },
-              "How_it_works": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/HowItsWorkStepsComponent"
-                }
-              },
-              "Why_SME_on_Call": {
-                "$ref": "#/components/schemas/WhySmeOnCallBlockComponent"
-              },
-              "Services": {
-                "$ref": "#/components/schemas/ServicesListListComponent"
-              },
-              "Constact_us": {
-                "$ref": "#/components/schemas/ContactUsBlockComponent"
-              },
-              "Experts": {
-                "$ref": "#/components/schemas/FeaturedExpertsBlockComponent"
               },
               "locale": {
                 "type": "string"
@@ -2923,29 +2905,11 @@
           "documentId": {
             "type": "string"
           },
-          "Hero_slider": {
+          "Hero_section": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/HeroSliderSliderItemsComponent"
+              "$ref": "#/components/schemas/HeroSectionSlidersComponent"
             }
-          },
-          "How_it_works": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/HowItsWorkStepsComponent"
-            }
-          },
-          "Why_SME_on_Call": {
-            "$ref": "#/components/schemas/WhySmeOnCallBlockComponent"
-          },
-          "Services": {
-            "$ref": "#/components/schemas/ServicesListListComponent"
-          },
-          "Constact_us": {
-            "$ref": "#/components/schemas/ContactUsBlockComponent"
-          },
-          "Experts": {
-            "$ref": "#/components/schemas/FeaturedExpertsBlockComponent"
           },
           "createdAt": {
             "type": "string",
@@ -2995,29 +2959,11 @@
                 "documentId": {
                   "type": "string"
                 },
-                "Hero_slider": {
+                "Hero_section": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/HeroSliderSliderItemsComponent"
+                    "$ref": "#/components/schemas/HeroSectionSlidersComponent"
                   }
-                },
-                "How_it_works": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/HowItsWorkStepsComponent"
-                  }
-                },
-                "Why_SME_on_Call": {
-                  "$ref": "#/components/schemas/WhySmeOnCallBlockComponent"
-                },
-                "Services": {
-                  "$ref": "#/components/schemas/ServicesListListComponent"
-                },
-                "Constact_us": {
-                  "$ref": "#/components/schemas/ContactUsBlockComponent"
-                },
-                "Experts": {
-                  "$ref": "#/components/schemas/FeaturedExpertsBlockComponent"
                 },
                 "createdAt": {
                   "type": "string",
@@ -3086,148 +3032,19 @@
           }
         }
       },
-      "HeroSliderSliderItemsComponent": {
+      "HeroSectionSlidersComponent": {
         "type": "object",
         "properties": {
           "id": {
             "type": "number"
           },
-          "pre_highlight_text": {
+          "title": {
             "type": "string"
           },
           "highlighted_text": {
             "type": "string"
           },
           "description": {},
-          "background_image": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "number"
-              },
-              "documentId": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {},
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number",
-                "format": "float"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {},
-              "related": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "number"
-                    },
-                    "documentId": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "folder": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "documentId": {
-                    "type": "string"
-                  }
-                }
-              },
-              "folderPath": {
-                "type": "string"
-              },
-              "createdAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "updatedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "publishedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "createdBy": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "documentId": {
-                    "type": "string"
-                  }
-                }
-              },
-              "updatedBy": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "documentId": {
-                    "type": "string"
-                  }
-                }
-              },
-              "locale": {
-                "type": "string"
-              },
-              "localizations": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "number"
-                    },
-                    "documentId": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
           "primary_button_text": {
             "type": "string"
           },
@@ -3239,57 +3056,8 @@
           },
           "secondary_button_link": {
             "type": "string"
-          }
-        }
-      },
-      "HowItsWorkStepsComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
           },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "primary_button_text": {
-            "type": "string"
-          },
-          "primary_button_link": {
-            "type": "string"
-          }
-        }
-      },
-      "WhySmeOnCallBlockComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "feature_list_1": {
-            "type": "string"
-          },
-          "feature_list_2": {
-            "type": "string"
-          },
-          "feature_list_3": {
-            "type": "string"
-          },
-          "primary_button_text": {
-            "type": "string"
-          },
-          "primary_button_link": {
-            "type": "string"
-          },
-          "image": {
+          "hero_image": {
             "type": "object",
             "properties": {
               "id": {
@@ -3416,343 +3184,6 @@
                   }
                 }
               }
-            }
-          }
-        }
-      },
-      "ServiceCardsCardItemsComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "image": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "number"
-              },
-              "documentId": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {},
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number",
-                "format": "float"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {},
-              "related": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "number"
-                    },
-                    "documentId": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "folder": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "documentId": {
-                    "type": "string"
-                  }
-                }
-              },
-              "folderPath": {
-                "type": "string"
-              },
-              "createdAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "updatedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "publishedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "createdBy": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "documentId": {
-                    "type": "string"
-                  }
-                }
-              },
-              "updatedBy": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "documentId": {
-                    "type": "string"
-                  }
-                }
-              },
-              "locale": {
-                "type": "string"
-              },
-              "localizations": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "number"
-                    },
-                    "documentId": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "description": {
-            "type": "string"
-          }
-        }
-      },
-      "ServicesListListComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "title": {
-            "type": "string"
-          },
-          "sub_title": {
-            "type": "string"
-          },
-          "services_card": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServiceCardsCardItemsComponent"
-            }
-          }
-        }
-      },
-      "ContactUsBlockComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          }
-        }
-      },
-      "ExpertListExpertsComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "image": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "number"
-              },
-              "documentId": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {},
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number",
-                "format": "float"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {},
-              "related": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "number"
-                    },
-                    "documentId": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "folder": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "documentId": {
-                    "type": "string"
-                  }
-                }
-              },
-              "folderPath": {
-                "type": "string"
-              },
-              "createdAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "updatedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "publishedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "createdBy": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "documentId": {
-                    "type": "string"
-                  }
-                }
-              },
-              "updatedBy": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "documentId": {
-                    "type": "string"
-                  }
-                }
-              },
-              "locale": {
-                "type": "string"
-              },
-              "localizations": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "number"
-                    },
-                    "documentId": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "name": {
-            "type": "string"
-          },
-          "designation": {
-            "type": "string"
-          }
-        }
-      },
-      "FeaturedExpertsBlockComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "experts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ExpertListExpertsComponent"
             }
           }
         }

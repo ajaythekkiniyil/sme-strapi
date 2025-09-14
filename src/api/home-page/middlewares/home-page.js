@@ -5,32 +5,32 @@
  */
 
 const populate = {
-  Hero_slider: {
+  Hero_section: {
     populate: '*'
   },
-  How_it_works: {
-    populate: '*'
-  },
-  Why_SME_on_Call: {
-    populate: '*'
-  },
-  Services: {
-    populate: {
-      services_card: {
-        populate: ['image']
-      }
-    }
-  },
-  Constact_us: {
-    populate: '*'
-  },
-  Experts: {
-    populate: {
-      experts: {
-        populate: ['image']
-      }
-    }
-  }
+  // How_it_works: {
+  //   populate: '*'
+  // },
+  // Why_SME_on_Call: {
+  //   populate: '*'
+  // },
+  // Services: {
+  //   populate: {
+  //     services_card: {
+  //       populate: ['image']
+  //     }
+  //   }
+  // },
+  // Constact_us: {
+  //   populate: '*'
+  // },
+  // Experts: {
+  //   populate: {
+  //     experts: {
+  //       populate: ['image']
+  //     }
+  //   }
+  // }
 }
 
 module.exports = (config, { strapi }) => {

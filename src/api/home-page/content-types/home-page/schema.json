@@ -11,36 +11,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Hero_slider": {
+    "Hero_section": {
       "type": "component",
-      "component": "hero-slider.slider-items",
-      "repeatable": true,
-      "required": false
-    },
-    "How_it_works": {
-      "type": "component",
-      "component": "how-its-work.steps",
+      "component": "hero-section.sliders",
       "repeatable": true
-    },
-    "Why_SME_on_Call": {
-      "type": "component",
-      "component": "why-sme-on-call.block",
-      "repeatable": false
-    },
-    "Services": {
-      "type": "component",
-      "component": "services-list.list",
-      "repeatable": false
-    },
-    "Constact_us": {
-      "type": "component",
-      "component": "contact-us.block",
-      "repeatable": false
-    },
-    "Experts": {
-      "type": "component",
-      "component": "featured-experts.block",
-      "repeatable": false
     }
   }
 }

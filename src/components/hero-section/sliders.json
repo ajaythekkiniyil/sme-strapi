@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_hero_section_sliders",
+  "info": {
+    "displayName": "sliders"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "highlighted_text": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "primary_button_text": {
+      "type": "string",
+      "required": true
+    },
+    "primary_button_link": {
+      "type": "string",
+      "required": true
+    },
+    "secondary_button_text": {
+      "type": "string",
+      "required": true
+    },
+    "secondary_button_link": {
+      "type": "string",
+      "required": true
+    },
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}
