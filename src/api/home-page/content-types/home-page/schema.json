@@ -21,6 +21,16 @@
       "component": "how-it-works.cards",
       "repeatable": true,
       "min": 3
+    },
+    "Why_sme_on_call": {
+      "type": "component",
+      "component": "why-sme-on-call.block",
+      "repeatable": false
+    },
+    "Services": {
+      "type": "component",
+      "component": "our-services.section",
+      "repeatable": false
     }
   }
 }

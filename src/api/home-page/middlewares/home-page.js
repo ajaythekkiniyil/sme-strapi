@@ -11,16 +11,16 @@ const populate = {
   How_it_works: {
     populate: '*'
   },
-  // Why_SME_on_Call: {
-  //   populate: '*'
-  // },
-  // Services: {
-  //   populate: {
-  //     services_card: {
-  //       populate: ['image']
-  //     }
-  //   }
-  // },
+  Why_sme_on_call: {
+    populate: '*'
+  },
+  Services: {
+    populate: {
+      services_card: {
+        populate: ['background_image']
+      }
+    }
+  },
   // Constact_us: {
   //   populate: '*'
   // },

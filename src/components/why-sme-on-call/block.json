@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_why_sme_on_call_blocks",
+  "info": {
+    "displayName": "block"
+  },
+  "options": {},
+  "attributes": {
+    "why_sme_on_call_description": {
+      "type": "text",
+      "required": true
+    },
+    "bullet_points": {
+      "type": "component",
+      "component": "bulltet-points.text",
+      "repeatable": true
+    },
+    "primary_button_text": {
+      "type": "string",
+      "required": true
+    },
+    "primary_button_link": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

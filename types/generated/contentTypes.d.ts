@@ -402,9 +402,11 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    Services: Schema.Attribute.Component<'our-services.section', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Why_sme_on_call: Schema.Attribute.Component<'why-sme-on-call.block', false>;
   };
 }
 

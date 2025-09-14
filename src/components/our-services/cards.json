@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_our_services_cards",
+  "info": {
+    "displayName": "cards"
+  },
+  "options": {},
+  "attributes": {
+    "background_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "service_title": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}

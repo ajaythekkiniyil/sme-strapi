@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_bulltet_points_texts",
+  "info": {
+    "displayName": "text",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}
