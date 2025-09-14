@@ -8,9 +8,9 @@ const populate = {
   Hero_section: {
     populate: '*'
   },
-  // How_it_works: {
-  //   populate: '*'
-  // },
+  How_it_works: {
+    populate: '*'
+  },
   // Why_SME_on_Call: {
   //   populate: '*'
   // },

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-09-14T06:54:31.221Z"
+    "x-generation-date": "2025-09-14T08:37:08.120Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -2840,6 +2840,12 @@
                   "$ref": "#/components/schemas/HeroSectionSlidersComponent"
                 }
               },
+              "How_it_works": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/HowItWorksCardsComponent"
+                }
+              },
               "locale": {
                 "type": "string"
               },
@@ -2911,6 +2917,12 @@
               "$ref": "#/components/schemas/HeroSectionSlidersComponent"
             }
           },
+          "How_it_works": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HowItWorksCardsComponent"
+            }
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -2963,6 +2975,12 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/HeroSectionSlidersComponent"
+                  }
+                },
+                "How_it_works": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HowItWorksCardsComponent"
                   }
                 },
                 "createdAt": {
@@ -3185,6 +3203,24 @@
                 }
               }
             }
+          }
+        }
+      },
+      "HowItWorksCardsComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "step_title": {
+            "type": "string"
+          },
+          "step_description": {},
+          "primary_button_text": {
+            "type": "string"
+          },
+          "primary_button_link": {
+            "type": "string"
           }
         }
       },

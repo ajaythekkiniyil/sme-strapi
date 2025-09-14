@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_how_it_works_cards",
+  "info": {
+    "displayName": "cards"
+  },
+  "options": {},
+  "attributes": {
+    "step_title": {
+      "type": "string",
+      "required": true
+    },
+    "step_description": {
+      "type": "blocks",
+      "required": true
+    },
+    "primary_button_text": {
+      "type": "string",
+      "required": true
+    },
+    "primary_button_link": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

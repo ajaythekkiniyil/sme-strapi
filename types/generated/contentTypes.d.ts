@@ -388,6 +388,13 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Hero_section: Schema.Attribute.Component<'hero-section.sliders', true>;
+    How_it_works: Schema.Attribute.Component<'how-it-works.cards', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 3;
+        },
+        number
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
