@@ -21,9 +21,6 @@ const populate = {
       }
     }
   },
-  // Constact_us: {
-  //   populate: '*'
-  // },
   // Experts: {
   //   populate: {
   //     experts: {

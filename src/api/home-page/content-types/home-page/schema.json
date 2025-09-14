@@ -31,6 +31,10 @@
       "type": "component",
       "component": "our-services.section",
       "repeatable": false
+    },
+    "Contact_us_description": {
+      "type": "blocks",
+      "required": true
     }
   }
 }
