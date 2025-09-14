@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_service_cards_card_items",
+  "collectionName": "components_expert_list_experts",
   "info": {
-    "displayName": "Card-items"
+    "displayName": "Experts"
   },
   "options": {},
   "attributes": {
@@ -12,7 +12,10 @@
         "images"
       ]
     },
-    "description": {
+    "name": {
+      "type": "string"
+    },
+    "designation": {
       "type": "string"
     }
   },

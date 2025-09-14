@@ -8,40 +8,41 @@
   "attributes": {
     "pre_highlight_text": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "highlighted_text": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "description": {
       "type": "blocks",
-      "required": true
+      "required": false
     },
     "background_image": {
       "type": "media",
       "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
     },
     "primary_button_text": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "primary_button_link": {
       "type": "string",
       "default": "#",
-      "required": true
+      "required": false
     },
     "secondary_button_text": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "secondary_button_link": {
       "type": "string",
       "default": "#",
-      "required": true
+      "required": false
     }
   },
   "config": {}

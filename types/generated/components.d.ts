@@ -1,5 +1,46 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContactUsBlock extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_blocks';
+  info: {
+    displayName: 'Block';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ExpertListExperts extends Struct.ComponentSchema {
+  collectionName: 'components_expert_list_experts';
+  info: {
+    displayName: 'Experts';
+  };
+  attributes: {
+    designation: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String;
+  };
+}
+
+export interface FeaturedExpertsBlock extends Struct.ComponentSchema {
+  collectionName: 'components_featured_experts_blocks';
+  info: {
+    displayName: 'Block';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    experts: Schema.Attribute.Component<'expert-list.experts', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+        },
+        number
+      >;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface HeroSliderSliderItems extends Struct.ComponentSchema {
   collectionName: 'components_hero_slider_slider_items';
   info: {
@@ -8,17 +49,15 @@ export interface HeroSliderSliderItems extends Struct.ComponentSchema {
   };
   attributes: {
     background_image: Schema.Attribute.Media<'images'>;
-    description: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    highlighted_text: Schema.Attribute.String & Schema.Attribute.Required;
-    pre_highlight_text: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Blocks;
+    highlighted_text: Schema.Attribute.String;
+    pre_highlight_text: Schema.Attribute.String;
     primary_button_link: Schema.Attribute.String &
-      Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#'>;
-    primary_button_text: Schema.Attribute.String & Schema.Attribute.Required;
+    primary_button_text: Schema.Attribute.String;
     secondary_button_link: Schema.Attribute.String &
-      Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#'>;
-    secondary_button_text: Schema.Attribute.String & Schema.Attribute.Required;
+    secondary_button_text: Schema.Attribute.String;
   };
 }
 
@@ -32,7 +71,7 @@ export interface HowItsWorkSteps extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     primary_button_link: Schema.Attribute.String;
     primary_button_text: Schema.Attribute.String;
-    Title: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -42,8 +81,8 @@ export interface ServiceCardsCardItems extends Struct.ComponentSchema {
     displayName: 'Card-items';
   };
   attributes: {
-    background_image: Schema.Attribute.Media<'images'>;
-    service_title: Schema.Attribute.String;
+    description: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
   };
 }
 
@@ -53,7 +92,7 @@ export interface ServicesListList extends Struct.ComponentSchema {
     displayName: 'List';
   };
   attributes: {
-    Services: Schema.Attribute.Component<'service-cards.card-items', true>;
+    services_card: Schema.Attribute.Component<'service-cards.card-items', true>;
     sub_title: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
@@ -69,6 +108,7 @@ export interface WhySmeOnCallBlock extends Struct.ComponentSchema {
     feature_list_1: Schema.Attribute.String;
     feature_list_2: Schema.Attribute.String;
     feature_list_3: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
     primary_button_link: Schema.Attribute.String;
     primary_button_text: Schema.Attribute.String;
     title: Schema.Attribute.String;
@@ -78,6 +118,9 @@ export interface WhySmeOnCallBlock extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'contact-us.block': ContactUsBlock;
+      'expert-list.experts': ExpertListExperts;
+      'featured-experts.block': FeaturedExpertsBlock;
       'hero-slider.slider-items': HeroSliderSliderItems;
       'how-its-work.steps': HowItsWorkSteps;
       'service-cards.card-items': ServiceCardsCardItems;

@@ -11,7 +11,7 @@
     "sub_title": {
       "type": "string"
     },
-    "Services": {
+    "services_card": {
       "type": "component",
       "component": "service-cards.card-items",
       "repeatable": true

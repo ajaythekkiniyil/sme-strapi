@@ -384,10 +384,12 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    Constact_us: Schema.Attribute.Component<'contact-us.block', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    hero_slider: Schema.Attribute.Component<'hero-slider.slider-items', true>;
+    Experts: Schema.Attribute.Component<'featured-experts.block', false>;
+    Hero_slider: Schema.Attribute.Component<'hero-slider.slider-items', true>;
     How_it_works: Schema.Attribute.Component<'how-its-work.steps', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -396,7 +398,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    services: Schema.Attribute.Component<'services-list.list', false>;
+    Services: Schema.Attribute.Component<'services-list.list', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
