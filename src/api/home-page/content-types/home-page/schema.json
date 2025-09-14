@@ -35,6 +35,11 @@
     "Contact_us_description": {
       "type": "blocks",
       "required": true
+    },
+    "Experts": {
+      "type": "component",
+      "component": "experts.section",
+      "repeatable": false
     }
   }
 }

@@ -11,6 +11,30 @@ export interface BulltetPointsText extends Struct.ComponentSchema {
   };
 }
 
+export interface ExpertsProfileCard extends Struct.ComponentSchema {
+  collectionName: 'components_experts_profile_cards';
+  info: {
+    displayName: 'profile-card';
+  };
+  attributes: {
+    designation: Schema.Attribute.String & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    profile_image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    profile_summary: Schema.Attribute.Blocks & Schema.Attribute.Required;
+  };
+}
+
+export interface ExpertsSection extends Struct.ComponentSchema {
+  collectionName: 'components_experts_sections';
+  info: {
+    displayName: 'section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    profile: Schema.Attribute.Component<'experts.profile-card', true>;
+  };
+}
+
 export interface HeroSectionSliders extends Struct.ComponentSchema {
   collectionName: 'components_hero_section_sliders';
   info: {
@@ -83,6 +107,8 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'bulltet-points.text': BulltetPointsText;
+      'experts.profile-card': ExpertsProfileCard;
+      'experts.section': ExpertsSection;
       'hero-section.sliders': HeroSectionSliders;
       'how-it-works.cards': HowItWorksCards;
       'our-services.cards': OurServicesCards;

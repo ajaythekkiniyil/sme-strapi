@@ -21,13 +21,13 @@ const populate = {
       }
     }
   },
-  // Experts: {
-  //   populate: {
-  //     experts: {
-  //       populate: ['image']
-  //     }
-  //   }
-  // }
+  Experts: {
+    populate: {
+      profile: {
+        populate: ['profile_image']
+      }
+    }
+  }
 }
 
 module.exports = (config, { strapi }) => {
