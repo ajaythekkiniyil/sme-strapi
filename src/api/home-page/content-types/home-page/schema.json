@@ -45,6 +45,11 @@
       "type": "component",
       "component": "faq.question-and-answer",
       "repeatable": true
+    },
+    "Testimonials": {
+      "type": "component",
+      "component": "testimonials.card",
+      "repeatable": true
     }
   }
 }

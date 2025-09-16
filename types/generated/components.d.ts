@@ -99,6 +99,19 @@ export interface OurServicesSection extends Struct.ComponentSchema {
   };
 }
 
+export interface TestimonialsCard extends Struct.ComponentSchema {
+  collectionName: 'components_testimonials_cards';
+  info: {
+    displayName: 'card';
+  };
+  attributes: {
+    author_name: Schema.Attribute.String & Schema.Attribute.Required;
+    designation: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
+    testimonial_text: Schema.Attribute.Blocks & Schema.Attribute.Required;
+  };
+}
+
 export interface WhySmeOnCallBlock extends Struct.ComponentSchema {
   collectionName: 'components_why_sme_on_call_blocks';
   info: {
@@ -125,6 +138,7 @@ declare module '@strapi/strapi' {
       'how-it-works.cards': HowItWorksCards;
       'our-services.cards': OurServicesCards;
       'our-services.section': OurServicesSection;
+      'testimonials.card': TestimonialsCard;
       'why-sme-on-call.block': WhySmeOnCallBlock;
     }
   }

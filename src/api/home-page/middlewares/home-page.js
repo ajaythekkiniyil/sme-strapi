@@ -30,7 +30,10 @@ const populate = {
   },
   Faq: {
     populate: '*'
-  }
+  },
+  Testimonials: {
+    populate: ['image']
+  },
 }
 
 module.exports = (config, { strapi }) => {
