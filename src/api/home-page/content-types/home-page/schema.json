@@ -40,6 +40,11 @@
       "type": "component",
       "component": "experts.section",
       "repeatable": false
+    },
+    "Faq": {
+      "type": "component",
+      "component": "faq.question-and-answer",
+      "repeatable": true
     }
   }
 }

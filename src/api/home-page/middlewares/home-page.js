@@ -27,6 +27,9 @@ const populate = {
         populate: ['profile_image']
       }
     }
+  },
+  Faq: {
+    populate: '*'
   }
 }
 

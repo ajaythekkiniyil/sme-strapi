@@ -35,6 +35,17 @@ export interface ExpertsSection extends Struct.ComponentSchema {
   };
 }
 
+export interface FaqQuestionAndAnswer extends Struct.ComponentSchema {
+  collectionName: 'components_faq_question_and_answers';
+  info: {
+    displayName: 'question_and_answer';
+  };
+  attributes: {
+    answer: Schema.Attribute.Blocks;
+    question: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface HeroSectionSliders extends Struct.ComponentSchema {
   collectionName: 'components_hero_section_sliders';
   info: {
@@ -109,6 +120,7 @@ declare module '@strapi/strapi' {
       'bulltet-points.text': BulltetPointsText;
       'experts.profile-card': ExpertsProfileCard;
       'experts.section': ExpertsSection;
+      'faq.question-and-answer': FaqQuestionAndAnswer;
       'hero-section.sliders': HeroSectionSliders;
       'how-it-works.cards': HowItWorksCards;
       'our-services.cards': OurServicesCards;

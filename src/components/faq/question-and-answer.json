@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_faq_question_and_answers",
+  "info": {
+    "displayName": "question_and_answer"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "answer": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}

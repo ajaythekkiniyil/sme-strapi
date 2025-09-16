@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-09-14T10:35:27.435Z"
+    "x-generation-date": "2025-09-16T16:15:33.760Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -2859,6 +2859,12 @@
               "Experts": {
                 "$ref": "#/components/schemas/ExpertsSectionComponent"
               },
+              "Faq": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/FaqQuestionAndAnswerComponent"
+                }
+              },
               "locale": {
                 "type": "string"
               },
@@ -2949,6 +2955,12 @@
           "Experts": {
             "$ref": "#/components/schemas/ExpertsSectionComponent"
           },
+          "Faq": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FaqQuestionAndAnswerComponent"
+            }
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -3018,6 +3030,12 @@
                 "Contact_us_description": {},
                 "Experts": {
                   "$ref": "#/components/schemas/ExpertsSectionComponent"
+                },
+                "Faq": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FaqQuestionAndAnswerComponent"
+                  }
                 },
                 "createdAt": {
                   "type": "string",
@@ -3739,6 +3757,18 @@
               "$ref": "#/components/schemas/ExpertsProfileCardComponent"
             }
           }
+        }
+      },
+      "FaqQuestionAndAnswerComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "question": {
+            "type": "string"
+          },
+          "answer": {}
         }
       },
       "SmeApplicationRequest": {
