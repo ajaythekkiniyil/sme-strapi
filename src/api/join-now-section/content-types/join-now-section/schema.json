@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "join_now_sections",
+  "info": {
+    "singularName": "join-now-section",
+    "pluralName": "join-now-sections",
+    "displayName": "Join Now Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "join_now_button": {
+      "type": "string",
+      "required": true
+    },
+    "join_now_button_link": {
+      "type": "string",
+      "required": true
+    },
+    "image_slider": {
+      "type": "component",
+      "component": "common-blocks.image-slider",
+      "repeatable": false
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "sme_pages",
+  "info": {
+    "singularName": "sme-page",
+    "pluralName": "sme-pages",
+    "displayName": "SME Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Header": {
+      "type": "component",
+      "component": "common-blocks.header",
+      "repeatable": false
+    },
+    "Main_content": {
+      "type": "component",
+      "component": "common-blocks.image-text-alternative",
+      "repeatable": false
+    },
+    "Image_slider": {
+      "type": "component",
+      "component": "common-blocks.image-slider",
+      "repeatable": true
+    },
+    "Benefits": {
+      "type": "component",
+      "component": "benefit-item.section",
+      "repeatable": false
+    },
+    "How_we_work_together_section": {
+      "type": "component",
+      "component": "how-it-works.how-we-work-togethe",
+      "repeatable": false
+    }
+  }
+}

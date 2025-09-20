@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_common_blocks_job_posts",
+  "info": {
+    "displayName": "job-post"
+  },
+  "options": {},
+  "attributes": {
+    "job_title": {
+      "type": "string",
+      "required": true
+    },
+    "sub_title": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "pre_highlight_text": {
+      "type": "string",
+      "required": true
+    },
+    "primary_button_link": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -19,8 +19,7 @@
     "How_it_works": {
       "type": "component",
       "component": "how-it-works.cards",
-      "repeatable": true,
-      "min": 3
+      "repeatable": true
     },
     "Why_sme_on_call": {
       "type": "component",
@@ -35,11 +34,6 @@
     "Contact_us_description": {
       "type": "blocks",
       "required": true
-    },
-    "Experts": {
-      "type": "component",
-      "component": "experts.section",
-      "repeatable": false
     },
     "Faq": {
       "type": "component",

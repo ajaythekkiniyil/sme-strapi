@@ -1,23 +1,22 @@
 {
-  "collectionName": "components_experts_sections",
+  "collectionName": "components_our_values_sections",
   "info": {
     "displayName": "section"
   },
   "options": {},
   "attributes": {
-    "title": {
+    "heading": {
       "type": "string",
       "required": true
     },
     "description": {
-      "type": "text",
+      "type": "string",
       "required": true
     },
-    "profile": {
+    "Values": {
       "type": "component",
-      "component": "experts.profile-card",
-      "repeatable": true,
-      "required": false
+      "component": "our-values.cards",
+      "repeatable": true
     }
   },
   "config": {}

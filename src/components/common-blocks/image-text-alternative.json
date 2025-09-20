@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_common_blocks_image_text_alternatives",
+  "info": {
+    "displayName": "image-text-alternative",
+    "icon": "plus"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

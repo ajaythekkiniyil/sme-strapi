@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_how_it_works_steps",
+  "info": {
+    "displayName": "steps"
+  },
+  "options": {},
+  "attributes": {
+    "step": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    }
+  },
+  "config": {}
+}

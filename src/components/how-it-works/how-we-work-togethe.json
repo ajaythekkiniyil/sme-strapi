@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_how_it_works_how_we_work_togethes",
+  "info": {
+    "displayName": "How We Work Together"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "steps": {
+      "type": "component",
+      "component": "how-it-works.steps",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

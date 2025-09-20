@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "expert_sections",
+  "info": {
+    "singularName": "expert-section",
+    "pluralName": "expert-sections",
+    "displayName": "Expert Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Experts": {
+      "type": "component",
+      "component": "experts.section",
+      "repeatable": false
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_common_blocks_image_sliders",
+  "info": {
+    "displayName": "image-slider"
+  },
+  "options": {},
+  "attributes": {
+    "image_slider": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}
