@@ -6,4 +6,10 @@
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::expert-section.expert-section');
+module.exports = createCoreRouter('api::expert-section.expert-section', {
+    config: {
+        find: {
+            middlewares: ['api::expert-section.expert-section']
+        }
+    }
+});

@@ -5,7 +5,7 @@
   },
   "options": {},
   "attributes": {
-    "title": {
+    "section_title": {
       "type": "string",
       "required": true
     },

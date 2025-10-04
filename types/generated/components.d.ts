@@ -126,7 +126,7 @@ export interface ExpertsSection extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     profile: Schema.Attribute.Component<'experts.profile-card', true>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    section_title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -166,7 +166,6 @@ export interface HowItWorksCards extends Struct.ComponentSchema {
   attributes: {
     primary_button_link: Schema.Attribute.String & Schema.Attribute.Required;
     primary_button_text: Schema.Attribute.String & Schema.Attribute.Required;
-    section_title: Schema.Attribute.String;
     step_description: Schema.Attribute.Blocks & Schema.Attribute.Required;
     step_title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -262,7 +261,6 @@ export interface WhySmeOnCallBlock extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     primary_button_link: Schema.Attribute.String & Schema.Attribute.Required;
     primary_button_text: Schema.Attribute.String & Schema.Attribute.Required;
-    section_title: Schema.Attribute.String;
   };
 }
 

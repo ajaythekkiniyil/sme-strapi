@@ -5,9 +5,6 @@
   },
   "options": {},
   "attributes": {
-    "section_title": {
-      "type": "string"
-    },
     "bullet_points": {
       "type": "component",
       "component": "bulltet-points.text",
