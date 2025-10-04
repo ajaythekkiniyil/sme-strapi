@@ -24,7 +24,7 @@
     "Image_slider": {
       "type": "component",
       "component": "common-blocks.image-slider",
-      "repeatable": true
+      "repeatable": false
     },
     "Benefits": {
       "type": "component",

@@ -71,8 +71,7 @@ export interface CommonBlocksImageSlider extends Struct.ComponentSchema {
     displayName: 'image-slider';
   };
   attributes: {
-    image_slider: Schema.Attribute.Media<'images', true> &
-      Schema.Attribute.Required;
+    image_slider: Schema.Attribute.Media<'images', true>;
   };
 }
 
@@ -84,8 +83,10 @@ export interface CommonBlocksImageTextAlternative
     icon: 'plus';
   };
   attributes: {
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    description: Schema.Attribute.Blocks;
     image: Schema.Attribute.Media<'images'>;
+    primary_button_link: Schema.Attribute.String;
+    primary_button_text: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

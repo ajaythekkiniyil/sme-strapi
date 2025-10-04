@@ -687,7 +687,7 @@ export interface ApiSmePageSmePage extends Struct.SingleTypeSchema {
     >;
     Image_slider: Schema.Attribute.Component<
       'common-blocks.image-slider',
-      true
+      false
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-10-04T07:50:53.782Z"
+    "x-generation-date": "2025-10-04T14:14:32.580Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -5774,9 +5774,7 @@
           "title": {
             "type": "string"
           },
-          "description": {
-            "type": "string"
-          },
+          "description": {},
           "image": {
             "type": "object",
             "properties": {
@@ -5905,6 +5903,12 @@
                 }
               }
             }
+          },
+          "primary_button_text": {
+            "type": "string"
+          },
+          "primary_button_link": {
+            "type": "string"
           }
         }
       },
@@ -9725,10 +9729,7 @@
                 "$ref": "#/components/schemas/CommonBlocksImageTextAlternativeComponent"
               },
               "Image_slider": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/CommonBlocksImageSliderComponent"
-                }
+                "$ref": "#/components/schemas/CommonBlocksImageSliderComponent"
               },
               "Benefits": {
                 "$ref": "#/components/schemas/BenefitItemSectionComponent"
@@ -9808,10 +9809,7 @@
             "$ref": "#/components/schemas/CommonBlocksImageTextAlternativeComponent"
           },
           "Image_slider": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CommonBlocksImageSliderComponent"
-            }
+            "$ref": "#/components/schemas/CommonBlocksImageSliderComponent"
           },
           "Benefits": {
             "$ref": "#/components/schemas/BenefitItemSectionComponent"
@@ -9874,10 +9872,7 @@
                   "$ref": "#/components/schemas/CommonBlocksImageTextAlternativeComponent"
                 },
                 "Image_slider": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CommonBlocksImageSliderComponent"
-                  }
+                  "$ref": "#/components/schemas/CommonBlocksImageSliderComponent"
                 },
                 "Benefits": {
                   "$ref": "#/components/schemas/BenefitItemSectionComponent"
