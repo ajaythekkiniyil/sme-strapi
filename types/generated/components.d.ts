@@ -149,7 +149,7 @@ export interface HeroSectionSliders extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Blocks & Schema.Attribute.Required;
     hero_image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    highlighted_text: Schema.Attribute.Text & Schema.Attribute.Required;
+    highlighted_text: Schema.Attribute.String & Schema.Attribute.Required;
     primary_button_link: Schema.Attribute.String & Schema.Attribute.Required;
     primary_button_text: Schema.Attribute.String & Schema.Attribute.Required;
     secondary_button_link: Schema.Attribute.String & Schema.Attribute.Required;
@@ -166,6 +166,7 @@ export interface HowItWorksCards extends Struct.ComponentSchema {
   attributes: {
     primary_button_link: Schema.Attribute.String & Schema.Attribute.Required;
     primary_button_text: Schema.Attribute.String & Schema.Attribute.Required;
+    section_title: Schema.Attribute.String;
     step_description: Schema.Attribute.Blocks & Schema.Attribute.Required;
     step_title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -211,7 +212,6 @@ export interface OurServicesSection extends Struct.ComponentSchema {
     displayName: 'section';
   };
   attributes: {
-    description: Schema.Attribute.Text;
     services_card: Schema.Attribute.Component<'our-services.cards', true>;
   };
 }
@@ -262,8 +262,7 @@ export interface WhySmeOnCallBlock extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     primary_button_link: Schema.Attribute.String & Schema.Attribute.Required;
     primary_button_text: Schema.Attribute.String & Schema.Attribute.Required;
-    why_sme_on_call_description: Schema.Attribute.Text &
-      Schema.Attribute.Required;
+    section_title: Schema.Attribute.String;
   };
 }
 

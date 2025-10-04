@@ -10,7 +10,7 @@
       "required": true
     },
     "highlighted_text": {
-      "type": "text",
+      "type": "string",
       "required": true
     },
     "description": {

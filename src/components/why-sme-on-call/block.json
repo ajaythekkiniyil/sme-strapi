@@ -5,9 +5,8 @@
   },
   "options": {},
   "attributes": {
-    "why_sme_on_call_description": {
-      "type": "text",
-      "required": true
+    "section_title": {
+      "type": "string"
     },
     "bullet_points": {
       "type": "component",

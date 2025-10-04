@@ -508,11 +508,9 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    Contact_us_description: Schema.Attribute.Blocks & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Faq: Schema.Attribute.Component<'faq.question-and-answer', true>;
     Hero_section: Schema.Attribute.Component<'hero-section.sliders', true>;
     How_it_works: Schema.Attribute.Component<'how-it-works.cards', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -522,11 +520,10 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    Services: Schema.Attribute.Component<'our-services.section', false>;
-    Testimonials: Schema.Attribute.Component<'testimonials.card', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Use_cases: Schema.Attribute.Component<'our-services.section', false>;
     Why_sme_on_call: Schema.Attribute.Component<'why-sme-on-call.block', false>;
   };
 }

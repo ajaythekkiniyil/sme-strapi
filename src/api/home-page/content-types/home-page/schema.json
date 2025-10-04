@@ -26,24 +26,10 @@
       "component": "why-sme-on-call.block",
       "repeatable": false
     },
-    "Services": {
+    "Use_cases": {
       "type": "component",
       "component": "our-services.section",
       "repeatable": false
-    },
-    "Contact_us_description": {
-      "type": "blocks",
-      "required": true
-    },
-    "Faq": {
-      "type": "component",
-      "component": "faq.question-and-answer",
-      "repeatable": true
-    },
-    "Testimonials": {
-      "type": "component",
-      "component": "testimonials.card",
-      "repeatable": true
     }
   }
 }

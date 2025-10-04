@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-09-20T11:32:13.341Z"
+    "x-generation-date": "2025-10-04T04:56:11.389Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -6853,9 +6853,6 @@
         ],
         "properties": {
           "data": {
-            "required": [
-              "Contact_us_description"
-            ],
             "type": "object",
             "properties": {
               "Hero_section": {
@@ -6873,21 +6870,8 @@
               "Why_sme_on_call": {
                 "$ref": "#/components/schemas/WhySmeOnCallBlockComponent"
               },
-              "Services": {
+              "Use_cases": {
                 "$ref": "#/components/schemas/OurServicesSectionComponent"
-              },
-              "Contact_us_description": {},
-              "Faq": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/FaqQuestionAndAnswerComponent"
-                }
-              },
-              "Testimonials": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TestimonialsCardComponent"
-                }
               },
               "locale": {
                 "type": "string"
@@ -6947,9 +6931,6 @@
       },
       "HomePage": {
         "type": "object",
-        "required": [
-          "Contact_us_description"
-        ],
         "properties": {
           "id": {
             "type": "number"
@@ -6972,21 +6953,8 @@
           "Why_sme_on_call": {
             "$ref": "#/components/schemas/WhySmeOnCallBlockComponent"
           },
-          "Services": {
+          "Use_cases": {
             "$ref": "#/components/schemas/OurServicesSectionComponent"
-          },
-          "Contact_us_description": {},
-          "Faq": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/FaqQuestionAndAnswerComponent"
-            }
-          },
-          "Testimonials": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TestimonialsCardComponent"
-            }
           },
           "createdAt": {
             "type": "string",
@@ -7051,21 +7019,8 @@
                 "Why_sme_on_call": {
                   "$ref": "#/components/schemas/WhySmeOnCallBlockComponent"
                 },
-                "Services": {
+                "Use_cases": {
                   "$ref": "#/components/schemas/OurServicesSectionComponent"
-                },
-                "Contact_us_description": {},
-                "Faq": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/FaqQuestionAndAnswerComponent"
-                  }
-                },
-                "Testimonials": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TestimonialsCardComponent"
-                  }
                 },
                 "createdAt": {
                   "type": "string",
@@ -7296,6 +7251,9 @@
           "id": {
             "type": "number"
           },
+          "section_title": {
+            "type": "string"
+          },
           "step_title": {
             "type": "string"
           },
@@ -7325,7 +7283,7 @@
           "id": {
             "type": "number"
           },
-          "why_sme_on_call_description": {
+          "section_title": {
             "type": "string"
           },
           "bullet_points": {
@@ -7617,169 +7575,10 @@
           "id": {
             "type": "number"
           },
-          "description": {
-            "type": "string"
-          },
           "services_card": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/OurServicesCardsComponent"
-            }
-          }
-        }
-      },
-      "FaqQuestionAndAnswerComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "question": {
-            "type": "string"
-          },
-          "answer": {}
-        }
-      },
-      "TestimonialsCardComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "author_name": {
-            "type": "string"
-          },
-          "designation": {
-            "type": "string"
-          },
-          "testimonial_text": {},
-          "image": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "number"
-              },
-              "documentId": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {},
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number",
-                "format": "float"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {},
-              "related": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "number"
-                    },
-                    "documentId": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "folder": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "documentId": {
-                    "type": "string"
-                  }
-                }
-              },
-              "folderPath": {
-                "type": "string"
-              },
-              "createdAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "updatedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "publishedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "createdBy": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "documentId": {
-                    "type": "string"
-                  }
-                }
-              },
-              "updatedBy": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "documentId": {
-                    "type": "string"
-                  }
-                }
-              },
-              "locale": {
-                "type": "string"
-              },
-              "localizations": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "number"
-                    },
-                    "documentId": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
             }
           }
         }

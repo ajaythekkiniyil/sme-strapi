@@ -14,26 +14,13 @@ const populate = {
   Why_sme_on_call: {
     populate: '*'
   },
-  Services: {
+  Use_cases: {
     populate: {
       services_card: {
         populate: ['background_image']
       }
     }
-  },
-  Experts: {
-    populate: {
-      profile: {
-        populate: ['profile_image']
-      }
-    }
-  },
-  Faq: {
-    populate: '*'
-  },
-  Testimonials: {
-    populate: ['image']
-  },
+  }
 }
 
 module.exports = (config, { strapi }) => {

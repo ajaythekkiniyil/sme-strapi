@@ -5,6 +5,9 @@
   },
   "options": {},
   "attributes": {
+    "section_title": {
+      "type": "string"
+    },
     "step_title": {
       "type": "string",
       "required": true
