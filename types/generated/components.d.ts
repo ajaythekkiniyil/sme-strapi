@@ -97,13 +97,21 @@ export interface CommonBlocksJobPost extends Struct.ComponentSchema {
     displayName: 'job-post';
   };
   attributes: {
-    description: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    job_title: Schema.Attribute.String & Schema.Attribute.Required;
-    location: Schema.Attribute.String & Schema.Attribute.Required;
-    pre_highlight_text: Schema.Attribute.String & Schema.Attribute.Required;
-    primary_button_link: Schema.Attribute.String & Schema.Attribute.Required;
-    sub_title: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Blocks;
+    job_title: Schema.Attribute.String;
+    location: Schema.Attribute.String;
+    primary_button_text: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'View Details'>;
+    sub_title: Schema.Attribute.String;
   };
+}
+
+export interface CommonBlocksSlug extends Struct.ComponentSchema {
+  collectionName: 'components_common_blocks_slugs';
+  info: {
+    displayName: 'slug';
+  };
+  attributes: {};
 }
 
 export interface ExpertsProfileCard extends Struct.ComponentSchema {
@@ -276,6 +284,7 @@ declare module '@strapi/strapi' {
       'common-blocks.image-slider': CommonBlocksImageSlider;
       'common-blocks.image-text-alternative': CommonBlocksImageTextAlternative;
       'common-blocks.job-post': CommonBlocksJobPost;
+      'common-blocks.slug': CommonBlocksSlug;
       'experts.profile-card': ExpertsProfileCard;
       'experts.section': ExpertsSection;
       'faq.question-and-answer': FaqQuestionAndAnswer;

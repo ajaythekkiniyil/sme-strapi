@@ -7,27 +7,24 @@
   "attributes": {
     "job_title": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "sub_title": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "location": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "description": {
       "type": "blocks",
-      "required": true
+      "required": false
     },
-    "pre_highlight_text": {
+    "primary_button_text": {
       "type": "string",
-      "required": true
-    },
-    "primary_button_link": {
-      "type": "string",
-      "required": true
+      "default": "View Details",
+      "required": false
     }
   },
   "config": {}
