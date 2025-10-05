@@ -59,8 +59,8 @@ export interface CommonBlocksHeader extends Struct.ComponentSchema {
   attributes: {
     background_image: Schema.Attribute.Media<'images'>;
     description: Schema.Attribute.Text;
-    primary_button_link: Schema.Attribute.String & Schema.Attribute.Required;
-    primary_button_text: Schema.Attribute.String & Schema.Attribute.Required;
+    primary_button_link: Schema.Attribute.String;
+    primary_button_text: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
