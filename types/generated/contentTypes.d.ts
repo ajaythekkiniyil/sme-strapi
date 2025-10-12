@@ -388,6 +388,10 @@ export interface ApiAboutUsPageAboutUsPage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Header: Schema.Attribute.Component<'common-blocks.header', false>;
+    Image_slider: Schema.Attribute.Component<
+      'common-blocks.image-slider',
+      false
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -398,6 +402,7 @@ export interface ApiAboutUsPageAboutUsPage extends Struct.SingleTypeSchema {
       'common-blocks.image-text-alternative',
       false
     >;
+    Our_values: Schema.Attribute.Component<'our-values.section', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

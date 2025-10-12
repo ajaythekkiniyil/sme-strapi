@@ -20,6 +20,16 @@
       "type": "component",
       "component": "common-blocks.image-text-alternative",
       "repeatable": false
+    },
+    "Our_values": {
+      "type": "component",
+      "component": "our-values.section",
+      "repeatable": false
+    },
+    "Image_slider": {
+      "type": "component",
+      "component": "common-blocks.image-slider",
+      "repeatable": false
     }
   }
 }

@@ -87,7 +87,7 @@ export interface CommonBlocksImageTextAlternative
     image: Schema.Attribute.Media<'images'>;
     primary_button_link: Schema.Attribute.String;
     primary_button_text: Schema.Attribute.String;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
   };
 }
 
