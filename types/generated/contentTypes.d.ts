@@ -461,6 +461,10 @@ export interface ApiContactUsPageContactUsPage extends Struct.SingleTypeSchema {
       false
     >;
     Header: Schema.Attribute.Component<'common-blocks.header', false>;
+    Image_slider: Schema.Attribute.Component<
+      'common-blocks.image-slider',
+      false
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-10-12T06:43:45.954Z"
+    "x-generation-date": "2025-10-12T08:39:15.894Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -6333,6 +6333,9 @@
               "Get_in_touch": {
                 "$ref": "#/components/schemas/CommonBlocksGetInTouchComponent"
               },
+              "Image_slider": {
+                "$ref": "#/components/schemas/CommonBlocksImageSliderComponent"
+              },
               "locale": {
                 "type": "string"
               },
@@ -6404,6 +6407,9 @@
           "Get_in_touch": {
             "$ref": "#/components/schemas/CommonBlocksGetInTouchComponent"
           },
+          "Image_slider": {
+            "$ref": "#/components/schemas/CommonBlocksImageSliderComponent"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -6457,6 +6463,9 @@
                 },
                 "Get_in_touch": {
                   "$ref": "#/components/schemas/CommonBlocksGetInTouchComponent"
+                },
+                "Image_slider": {
+                  "$ref": "#/components/schemas/CommonBlocksImageSliderComponent"
                 },
                 "createdAt": {
                   "type": "string",

@@ -20,6 +20,11 @@
       "type": "component",
       "component": "common-blocks.get-in-touch",
       "repeatable": false
+    },
+    "Image_slider": {
+      "type": "component",
+      "component": "common-blocks.image-slider",
+      "repeatable": false
     }
   }
 }
