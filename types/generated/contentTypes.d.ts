@@ -442,6 +442,35 @@ export interface ApiCareersPageCareersPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiComplainsPageComplainsPage extends Struct.SingleTypeSchema {
+  collectionName: 'complains_pages';
+  info: {
+    displayName: 'Complains page';
+    pluralName: 'complains-pages';
+    singularName: 'complains-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Header: Schema.Attribute.Component<'common-blocks.header', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::complains-page.complains-page'
+    > &
+      Schema.Attribute.Private;
+    Main_content: Schema.Attribute.Blocks;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactUsPageContactUsPage extends Struct.SingleTypeSchema {
   collectionName: 'contact_us_pages';
   info: {
@@ -1268,6 +1297,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::careers-page.careers-page': ApiCareersPageCareersPage;
+      'api::complains-page.complains-page': ApiComplainsPageComplainsPage;
       'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
       'api::expert-section.expert-section': ApiExpertSectionExpertSection;
       'api::home-page.home-page': ApiHomePageHomePage;

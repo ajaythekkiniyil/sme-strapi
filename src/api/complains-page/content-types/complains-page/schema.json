@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "complains_pages",
+  "info": {
+    "singularName": "complains-page",
+    "pluralName": "complains-pages",
+    "displayName": "Complains page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Header": {
+      "type": "component",
+      "component": "common-blocks.header",
+      "repeatable": false
+    },
+    "Main_content": {
+      "type": "blocks"
+    }
+  }
+}
