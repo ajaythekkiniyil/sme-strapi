@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "enrollment_forums",
+  "info": {
+    "singularName": "enrollment-forum",
+    "pluralName": "enrollment-forums",
+    "displayName": "Enrollment-forum"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Header": {
+      "type": "component",
+      "component": "common-blocks.header",
+      "repeatable": false
+    }
+  }
+}

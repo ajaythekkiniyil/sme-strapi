@@ -507,6 +507,35 @@ export interface ApiContactUsPageContactUsPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiEnrollmentForumEnrollmentForum
+  extends Struct.SingleTypeSchema {
+  collectionName: 'enrollment_forums';
+  info: {
+    displayName: 'Enrollment-forum';
+    pluralName: 'enrollment-forums';
+    singularName: 'enrollment-forum';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Header: Schema.Attribute.Component<'common-blocks.header', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::enrollment-forum.enrollment-forum'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiExpertSectionExpertSection extends Struct.SingleTypeSchema {
   collectionName: 'expert_sections';
   info: {
@@ -1299,6 +1328,7 @@ declare module '@strapi/strapi' {
       'api::careers-page.careers-page': ApiCareersPageCareersPage;
       'api::complains-page.complains-page': ApiComplainsPageComplainsPage;
       'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
+      'api::enrollment-forum.enrollment-forum': ApiEnrollmentForumEnrollmentForum;
       'api::expert-section.expert-section': ApiExpertSectionExpertSection;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::job-post.job-post': ApiJobPostJobPost;
