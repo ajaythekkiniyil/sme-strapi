@@ -106,14 +106,6 @@ export interface CommonBlocksJobPost extends Struct.ComponentSchema {
   };
 }
 
-export interface CommonBlocksSlug extends Struct.ComponentSchema {
-  collectionName: 'components_common_blocks_slugs';
-  info: {
-    displayName: 'slug';
-  };
-  attributes: {};
-}
-
 export interface ExpertsProfileCard extends Struct.ComponentSchema {
   collectionName: 'components_experts_profile_cards';
   info: {
@@ -284,7 +276,6 @@ declare module '@strapi/strapi' {
       'common-blocks.image-slider': CommonBlocksImageSlider;
       'common-blocks.image-text-alternative': CommonBlocksImageTextAlternative;
       'common-blocks.job-post': CommonBlocksJobPost;
-      'common-blocks.slug': CommonBlocksSlug;
       'experts.profile-card': ExpertsProfileCard;
       'experts.section': ExpertsSection;
       'faq.question-and-answer': FaqQuestionAndAnswer;

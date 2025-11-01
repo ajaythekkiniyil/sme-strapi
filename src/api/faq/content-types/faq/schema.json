@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "faqs",
+  "info": {
+    "singularName": "faq",
+    "pluralName": "faqs",
+    "displayName": "FAQ"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Header": {
+      "type": "component",
+      "component": "common-blocks.header",
+      "repeatable": false
+    },
+    "Main_content": {
+      "type": "component",
+      "component": "common-blocks.image-text-alternative",
+      "repeatable": false
+    },
+    "Faq": {
+      "type": "component",
+      "component": "faq.question-and-answer",
+      "repeatable": true
+    }
+  }
+}

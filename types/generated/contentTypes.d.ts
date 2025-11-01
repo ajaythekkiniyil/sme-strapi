@@ -564,6 +564,36 @@ export interface ApiExpertSectionExpertSection extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFaqFaq extends Struct.SingleTypeSchema {
+  collectionName: 'faqs';
+  info: {
+    displayName: 'FAQ';
+    pluralName: 'faqs';
+    singularName: 'faq';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Faq: Schema.Attribute.Component<'faq.question-and-answer', true>;
+    Header: Schema.Attribute.Component<'common-blocks.header', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'> &
+      Schema.Attribute.Private;
+    Main_content: Schema.Attribute.Component<
+      'common-blocks.image-text-alternative',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
@@ -1389,6 +1419,7 @@ declare module '@strapi/strapi' {
       'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
       'api::enrollment-forum.enrollment-forum': ApiEnrollmentForumEnrollmentForum;
       'api::expert-section.expert-section': ApiExpertSectionExpertSection;
+      'api::faq.faq': ApiFaqFaq;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::job-post.job-post': ApiJobPostJobPost;
       'api::join-now-section.join-now-section': ApiJoinNowSectionJoinNowSection;
