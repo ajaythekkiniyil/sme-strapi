@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "privacy_policies",
+  "info": {
+    "singularName": "privacy-policy",
+    "pluralName": "privacy-policies",
+    "displayName": "Privacy policy"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Header": {
+      "type": "component",
+      "component": "common-blocks.header",
+      "repeatable": false
+    },
+    "Main_content": {
+      "type": "blocks"
+    }
+  }
+}

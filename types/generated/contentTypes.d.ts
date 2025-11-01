@@ -689,6 +689,35 @@ export interface ApiNewsletterNewsletter extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
+  collectionName: 'privacy_policies';
+  info: {
+    displayName: 'Privacy policy';
+    pluralName: 'privacy-policies';
+    singularName: 'privacy-policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Header: Schema.Attribute.Component<'common-blocks.header', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privacy-policy.privacy-policy'
+    > &
+      Schema.Attribute.Private;
+    Main_content: Schema.Attribute.Blocks;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSmeApplicationSmeApplication
   extends Struct.CollectionTypeSchema {
   collectionName: 'sme_applications';
@@ -1334,6 +1363,7 @@ declare module '@strapi/strapi' {
       'api::job-post.job-post': ApiJobPostJobPost;
       'api::join-now-section.join-now-section': ApiJoinNowSectionJoinNowSection;
       'api::newsletter.newsletter': ApiNewsletterNewsletter;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::sme-application.sme-application': ApiSmeApplicationSmeApplication;
       'api::sme-page.sme-page': ApiSmePageSmePage;
       'api::ticket.ticket': ApiTicketTicket;
