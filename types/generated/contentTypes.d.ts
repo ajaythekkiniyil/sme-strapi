@@ -760,34 +760,45 @@ export interface ApiSmeApplicationSmeApplication
     draftAndPublish: true;
   };
   attributes: {
+    businessEmail: Schema.Attribute.Email & Schema.Attribute.Required;
+    businessNumber: Schema.Attribute.BigInteger & Schema.Attribute.Required;
+    coverLetter: Schema.Attribute.Media<'files'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    email: Schema.Attribute.Email;
-    email_verified: Schema.Attribute.Boolean &
-      Schema.Attribute.DefaultTo<false>;
-    experience: Schema.Attribute.String;
-    expertise_areas: Schema.Attribute.String;
-    full_name: Schema.Attribute.String;
-    language_spoken: Schema.Attribute.String;
-    linkedin_url: Schema.Attribute.String;
+    degree: Schema.Attribute.String & Schema.Attribute.Required;
+    discipline: Schema.Attribute.String & Schema.Attribute.Required;
+    emailVerified: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    endDate: Schema.Attribute.String & Schema.Attribute.Required;
+    firstName: Schema.Attribute.String & Schema.Attribute.Required;
+    jobName: Schema.Attribute.String;
+    lastName: Schema.Attribute.String & Schema.Attribute.Required;
+    legalFirstName: Schema.Attribute.String & Schema.Attribute.Required;
+    legalLastName: Schema.Attribute.String & Schema.Attribute.Required;
+    linkedinProfile: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::sme-application.sme-application'
     > &
       Schema.Attribute.Private;
-    past_companies: Schema.Attribute.String;
-    phone: Schema.Attribute.BigInteger;
+    location: Schema.Attribute.String & Schema.Attribute.Required;
+    nonDisclosureAgreement: Schema.Attribute.String & Schema.Attribute.Required;
+    preferredFirstName: Schema.Attribute.String & Schema.Attribute.Required;
+    previousEmployee: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    resume: Schema.Attribute.Media<'files'>;
-    sme_status: Schema.Attribute.Enumeration<
-      ['pending', 'rejected', 'active']
-    > &
+    relationName: Schema.Attribute.String;
+    relationStatus: Schema.Attribute.String & Schema.Attribute.Required;
+    resume: Schema.Attribute.Media<'files'> & Schema.Attribute.Required;
+    school: Schema.Attribute.String & Schema.Attribute.Required;
+    smeStatus: Schema.Attribute.Enumeration<['pending', 'rejected', 'active']> &
       Schema.Attribute.DefaultTo<'pending'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    website: Schema.Attribute.String;
+    whereDidYouFindOutAboutThisRole: Schema.Attribute.String &
+      Schema.Attribute.Required;
   };
 }
 
@@ -865,7 +876,7 @@ export interface ApiTermsAndConditionTermsAndCondition
 export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
   collectionName: 'tickets';
   info: {
-    displayName: 'Tickets';
+    displayName: 'Basic Enquiry';
     pluralName: 'tickets';
     singularName: 'ticket';
   };
@@ -873,19 +884,17 @@ export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    admin_verified: Schema.Attribute.Boolean &
-      Schema.Attribute.DefaultTo<false>;
     attachments: Schema.Attribute.Media<'images' | 'files', true>;
-    business_email: Schema.Attribute.Email;
-    business_number: Schema.Attribute.BigInteger;
+    businessEmail: Schema.Attribute.Email;
+    businessNumber: Schema.Attribute.BigInteger;
     company: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     enquiry: Schema.Attribute.Text;
     field: Schema.Attribute.String;
-    first_name: Schema.Attribute.String & Schema.Attribute.Required;
-    last_name: Schema.Attribute.String;
+    firstName: Schema.Attribute.String;
+    lastName: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -893,10 +902,6 @@ export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     location: Schema.Attribute.String;
-    payment_status: Schema.Attribute.Enumeration<
-      ['pending', 'in-progress', 'error', 'done']
-    > &
-      Schema.Attribute.DefaultTo<'pending'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

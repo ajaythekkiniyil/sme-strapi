@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-11-29T16:33:34.744Z"
+    "x-generation-date": "2025-12-01T13:01:01.351Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -11187,33 +11187,46 @@
         ],
         "properties": {
           "data": {
+            "required": [
+              "firstName",
+              "lastName",
+              "businessEmail",
+              "businessNumber",
+              "location",
+              "resume",
+              "school",
+              "degree",
+              "discipline",
+              "endDate",
+              "legalFirstName",
+              "legalLastName",
+              "preferredFirstName",
+              "whereDidYouFindOutAboutThisRole",
+              "previousEmployee",
+              "nonDisclosureAgreement",
+              "relationStatus"
+            ],
             "type": "object",
             "properties": {
-              "full_name": {
+              "jobName": {
                 "type": "string"
               },
-              "email": {
+              "firstName": {
+                "type": "string"
+              },
+              "lastName": {
+                "type": "string"
+              },
+              "businessEmail": {
                 "type": "string",
                 "format": "email"
               },
-              "phone": {
+              "businessNumber": {
                 "type": "string",
                 "pattern": "^\\d*$",
                 "example": "123456789"
               },
-              "linkedin_url": {
-                "type": "string"
-              },
-              "experience": {
-                "type": "string"
-              },
-              "past_companies": {
-                "type": "string"
-              },
-              "expertise_areas": {
-                "type": "string"
-              },
-              "language_spoken": {
+              "location": {
                 "type": "string"
               },
               "resume": {
@@ -11227,7 +11240,60 @@
                 ],
                 "example": "string or id"
               },
-              "sme_status": {
+              "coverLetter": {
+                "oneOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "example": "string or id"
+              },
+              "school": {
+                "type": "string"
+              },
+              "degree": {
+                "type": "string"
+              },
+              "discipline": {
+                "type": "string"
+              },
+              "endDate": {
+                "type": "string"
+              },
+              "legalFirstName": {
+                "type": "string"
+              },
+              "legalLastName": {
+                "type": "string"
+              },
+              "preferredFirstName": {
+                "type": "string"
+              },
+              "linkedinProfile": {
+                "type": "string"
+              },
+              "website": {
+                "type": "string"
+              },
+              "whereDidYouFindOutAboutThisRole": {
+                "type": "string"
+              },
+              "previousEmployee": {
+                "type": "string"
+              },
+              "nonDisclosureAgreement": {
+                "type": "string"
+              },
+              "relationStatus": {
+                "type": "string"
+              },
+              "relationName": {
+                "type": "string"
+              },
+              "smeStatus": {
                 "type": "string",
                 "enum": [
                   "pending",
@@ -11235,7 +11301,7 @@
                   "active"
                 ]
               },
-              "email_verified": {
+              "emailVerified": {
                 "type": "boolean"
               },
               "locale": {
@@ -11296,6 +11362,25 @@
       },
       "SmeApplication": {
         "type": "object",
+        "required": [
+          "firstName",
+          "lastName",
+          "businessEmail",
+          "businessNumber",
+          "location",
+          "resume",
+          "school",
+          "degree",
+          "discipline",
+          "endDate",
+          "legalFirstName",
+          "legalLastName",
+          "preferredFirstName",
+          "whereDidYouFindOutAboutThisRole",
+          "previousEmployee",
+          "nonDisclosureAgreement",
+          "relationStatus"
+        ],
         "properties": {
           "id": {
             "type": "number"
@@ -11303,31 +11388,25 @@
           "documentId": {
             "type": "string"
           },
-          "full_name": {
+          "jobName": {
             "type": "string"
           },
-          "email": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "businessEmail": {
             "type": "string",
             "format": "email"
           },
-          "phone": {
+          "businessNumber": {
             "type": "string",
             "pattern": "^\\d*$",
             "example": "123456789"
           },
-          "linkedin_url": {
-            "type": "string"
-          },
-          "experience": {
-            "type": "string"
-          },
-          "past_companies": {
-            "type": "string"
-          },
-          "expertise_areas": {
-            "type": "string"
-          },
-          "language_spoken": {
+          "location": {
             "type": "string"
           },
           "resume": {
@@ -11928,7 +12007,178 @@
               }
             }
           },
-          "sme_status": {
+          "coverLetter": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "documentId": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {},
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number",
+                "format": "float"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {},
+              "related": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "folder": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
+              },
+              "folderPath": {
+                "type": "string"
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "publishedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "createdBy": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
+              },
+              "updatedBy": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
+              },
+              "locale": {
+                "type": "string"
+              },
+              "localizations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "school": {
+            "type": "string"
+          },
+          "degree": {
+            "type": "string"
+          },
+          "discipline": {
+            "type": "string"
+          },
+          "endDate": {
+            "type": "string"
+          },
+          "legalFirstName": {
+            "type": "string"
+          },
+          "legalLastName": {
+            "type": "string"
+          },
+          "preferredFirstName": {
+            "type": "string"
+          },
+          "linkedinProfile": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "whereDidYouFindOutAboutThisRole": {
+            "type": "string"
+          },
+          "previousEmployee": {
+            "type": "string"
+          },
+          "nonDisclosureAgreement": {
+            "type": "string"
+          },
+          "relationStatus": {
+            "type": "string"
+          },
+          "relationName": {
+            "type": "string"
+          },
+          "smeStatus": {
             "type": "string",
             "enum": [
               "pending",
@@ -11936,7 +12186,7 @@
               "active"
             ]
           },
-          "email_verified": {
+          "emailVerified": {
             "type": "boolean"
           },
           "createdAt": {
@@ -11987,31 +12237,25 @@
                 "documentId": {
                   "type": "string"
                 },
-                "full_name": {
+                "jobName": {
                   "type": "string"
                 },
-                "email": {
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                },
+                "businessEmail": {
                   "type": "string",
                   "format": "email"
                 },
-                "phone": {
+                "businessNumber": {
                   "type": "string",
                   "pattern": "^\\d*$",
                   "example": "123456789"
                 },
-                "linkedin_url": {
-                  "type": "string"
-                },
-                "experience": {
-                  "type": "string"
-                },
-                "past_companies": {
-                  "type": "string"
-                },
-                "expertise_areas": {
-                  "type": "string"
-                },
-                "language_spoken": {
+                "location": {
                   "type": "string"
                 },
                 "resume": {
@@ -12143,7 +12387,178 @@
                     }
                   }
                 },
-                "sme_status": {
+                "coverLetter": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "alternativeText": {
+                      "type": "string"
+                    },
+                    "caption": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "integer"
+                    },
+                    "height": {
+                      "type": "integer"
+                    },
+                    "formats": {},
+                    "hash": {
+                      "type": "string"
+                    },
+                    "ext": {
+                      "type": "string"
+                    },
+                    "mime": {
+                      "type": "string"
+                    },
+                    "size": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "previewUrl": {
+                      "type": "string"
+                    },
+                    "provider": {
+                      "type": "string"
+                    },
+                    "provider_metadata": {},
+                    "related": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "documentId": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "folder": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "documentId": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "folderPath": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "publishedAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "createdBy": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "documentId": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "updatedBy": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "documentId": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "locale": {
+                      "type": "string"
+                    },
+                    "localizations": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "documentId": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "school": {
+                  "type": "string"
+                },
+                "degree": {
+                  "type": "string"
+                },
+                "discipline": {
+                  "type": "string"
+                },
+                "endDate": {
+                  "type": "string"
+                },
+                "legalFirstName": {
+                  "type": "string"
+                },
+                "legalLastName": {
+                  "type": "string"
+                },
+                "preferredFirstName": {
+                  "type": "string"
+                },
+                "linkedinProfile": {
+                  "type": "string"
+                },
+                "website": {
+                  "type": "string"
+                },
+                "whereDidYouFindOutAboutThisRole": {
+                  "type": "string"
+                },
+                "previousEmployee": {
+                  "type": "string"
+                },
+                "nonDisclosureAgreement": {
+                  "type": "string"
+                },
+                "relationStatus": {
+                  "type": "string"
+                },
+                "relationName": {
+                  "type": "string"
+                },
+                "smeStatus": {
                   "type": "string",
                   "enum": [
                     "pending",
@@ -12151,7 +12566,7 @@
                     "active"
                   ]
                 },
-                "email_verified": {
+                "emailVerified": {
                   "type": "boolean"
                 },
                 "createdAt": {
@@ -12721,26 +13136,23 @@
         ],
         "properties": {
           "data": {
-            "required": [
-              "first_name"
-            ],
             "type": "object",
             "properties": {
-              "first_name": {
+              "firstName": {
                 "type": "string"
               },
-              "last_name": {
+              "lastName": {
                 "type": "string"
               },
               "company": {
                 "type": "string"
               },
-              "business_number": {
+              "businessNumber": {
                 "type": "string",
                 "pattern": "^\\d*$",
                 "example": "123456789"
               },
-              "business_email": {
+              "businessEmail": {
                 "type": "string",
                 "format": "email"
               },
@@ -12766,18 +13178,6 @@
                   ],
                   "example": "string or id"
                 }
-              },
-              "admin_verified": {
-                "type": "boolean"
-              },
-              "payment_status": {
-                "type": "string",
-                "enum": [
-                  "pending",
-                  "in-progress",
-                  "error",
-                  "done"
-                ]
               },
               "locale": {
                 "type": "string"
@@ -12837,9 +13237,6 @@
       },
       "Ticket": {
         "type": "object",
-        "required": [
-          "first_name"
-        ],
         "properties": {
           "id": {
             "type": "number"
@@ -12847,21 +13244,21 @@
           "documentId": {
             "type": "string"
           },
-          "first_name": {
+          "firstName": {
             "type": "string"
           },
-          "last_name": {
+          "lastName": {
             "type": "string"
           },
           "company": {
             "type": "string"
           },
-          "business_number": {
+          "businessNumber": {
             "type": "string",
             "pattern": "^\\d*$",
             "example": "123456789"
           },
-          "business_email": {
+          "businessEmail": {
             "type": "string",
             "format": "email"
           },
@@ -13475,18 +13872,6 @@
               }
             }
           },
-          "admin_verified": {
-            "type": "boolean"
-          },
-          "payment_status": {
-            "type": "string",
-            "enum": [
-              "pending",
-              "in-progress",
-              "error",
-              "done"
-            ]
-          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -13535,21 +13920,21 @@
                 "documentId": {
                   "type": "string"
                 },
-                "first_name": {
+                "firstName": {
                   "type": "string"
                 },
-                "last_name": {
+                "lastName": {
                   "type": "string"
                 },
                 "company": {
                   "type": "string"
                 },
-                "business_number": {
+                "businessNumber": {
                   "type": "string",
                   "pattern": "^\\d*$",
                   "example": "123456789"
                 },
-                "business_email": {
+                "businessEmail": {
                   "type": "string",
                   "format": "email"
                 },
@@ -13693,18 +14078,6 @@
                       }
                     }
                   }
-                },
-                "admin_verified": {
-                  "type": "boolean"
-                },
-                "payment_status": {
-                  "type": "string",
-                  "enum": [
-                    "pending",
-                    "in-progress",
-                    "error",
-                    "done"
-                  ]
                 },
                 "createdAt": {
                   "type": "string",

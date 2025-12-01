@@ -4,27 +4,27 @@
   "info": {
     "singularName": "ticket",
     "pluralName": "tickets",
-    "displayName": "Tickets"
+    "displayName": "Basic Enquiry"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "first_name": {
+    "firstName": {
       "type": "string",
-      "required": true
+      "required": false
     },
-    "last_name": {
+    "lastName": {
       "type": "string"
     },
     "company": {
       "type": "string"
     },
-    "business_number": {
+    "businessNumber": {
       "type": "biginteger"
     },
-    "business_email": {
+    "businessEmail": {
       "type": "email"
     },
     "location": {
@@ -42,20 +42,6 @@
       "allowedTypes": [
         "images",
         "files"
-      ]
-    },
-    "admin_verified": {
-      "type": "boolean",
-      "default": false
-    },
-    "payment_status": {
-      "type": "enumeration",
-      "default": "pending",
-      "enum": [
-        "pending",
-        "in-progress",
-        "error",
-        "done"
       ]
     }
   }
