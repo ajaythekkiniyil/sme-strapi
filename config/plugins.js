@@ -13,24 +13,28 @@ module.exports = ({ env }) => ({
     },
   },
 
-  // 3. Email Plugin (using Resend via Nodemailer)
+  // 3. Email Plugin
   email: {
     config: {
       provider: 'nodemailer',
       providerOptions: {
-        host: 'smtp.resend.com',
+        host: 'smtp.hostinger.com',
         port: 465,
-        secure: true,
+        secure: true, // Add this line for Port 465
         auth: {
-          user: 'resend',
-          // Securely loads the key from the .env file
-          pass: env('RESEND_API_KEY'), 
+          user: env('SMTP_USERNAME'),
+          pass: env('SMTP_PASSWORD'),
+        },
+        // Sometimes Hostinger requires this to bypass local cert issues
+        tls: {
+          rejectUnauthorized: false,
         },
       },
       settings: {
-        defaultFrom: env('MAIL_DEFAULT_FROM', 'onboarding@resend.dev'),
-        defaultReplyTo: 'admin@yourdomain.com',
+        defaultFrom: env('SMTP_USERNAME'),
+        defaultReplyTo: env('SMTP_USERNAME'),
       },
     },
   },
+
 });
