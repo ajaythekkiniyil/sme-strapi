@@ -73,6 +73,22 @@
         "sme",
         "user"
       ]
+    },
+    "otp": {
+      "type": "integer",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "confirmed"
+            },
+            false
+          ]
+        }
+      },
+      "required": false,
+      "unique": true,
+      "max": 6
     }
   }
 }

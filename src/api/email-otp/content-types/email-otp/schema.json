@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "email_otps",
+  "info": {
+    "singularName": "email-otp",
+    "pluralName": "email-otps",
+    "displayName": "Email OTP"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "email": { "type": "email", "required": true },
+    "otpHash": { "type": "string", "required": true },
+    "expiresAt": { "type": "datetime", "required": true },
+    "used": { "type": "boolean", "default": false }
+  }
+}

@@ -507,6 +507,37 @@ export interface ApiContactUsPageContactUsPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiEmailOtpEmailOtp extends Struct.CollectionTypeSchema {
+  collectionName: 'email_otps';
+  info: {
+    displayName: 'Email OTP';
+    pluralName: 'email-otps';
+    singularName: 'email-otp';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    expiresAt: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::email-otp.email-otp'
+    > &
+      Schema.Attribute.Private;
+    otpHash: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    used: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ApiEnrollmentForumEnrollmentForum
   extends Struct.SingleTypeSchema {
   collectionName: 'enrollment_forums';
@@ -1384,6 +1415,14 @@ export interface PluginUsersPermissionsUser
       'plugin::users-permissions.user'
     > &
       Schema.Attribute.Private;
+    otp: Schema.Attribute.Integer &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 6;
+        },
+        number
+      >;
     password: Schema.Attribute.Password &
       Schema.Attribute.Private &
       Schema.Attribute.SetMinMaxLength<{
@@ -1422,6 +1461,7 @@ declare module '@strapi/strapi' {
       'api::careers-page.careers-page': ApiCareersPageCareersPage;
       'api::complains-page.complains-page': ApiComplainsPageComplainsPage;
       'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
+      'api::email-otp.email-otp': ApiEmailOtpEmailOtp;
       'api::enrollment-forum.enrollment-forum': ApiEnrollmentForumEnrollmentForum;
       'api::expert-section.expert-section': ApiExpertSectionExpertSection;
       'api::faq.faq': ApiFaqFaq;

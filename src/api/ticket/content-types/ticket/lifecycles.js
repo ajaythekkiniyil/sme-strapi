@@ -1,7 +1,6 @@
 module.exports = {
   async afterCreate(event) {
 
-    console.log(event, "afterCreate")
     const { result } = event; // The newly created entry's data
 
     try {
@@ -37,7 +36,6 @@ View the submission in the Strapi admin panel.
 
     } catch (err) {
       // Log any errors if the email fails to send
-      console.error('Error sending admin notification email:', err);
     }
   },
 };

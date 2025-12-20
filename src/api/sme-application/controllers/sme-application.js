@@ -14,7 +14,6 @@ const { createCoreController } = require('@strapi/strapi').factories;
 module.exports = createCoreController('api::sme-application.sme-application', ({ strapi }) => ({
 
   async sendInterviewInvite(ctx) {
-    console.log(ctx.request.body);
 
     // this will email to user with default username and password.
     const { username, email, password } = ctx.request.body;
@@ -77,7 +76,7 @@ module.exports = createCoreController('api::sme-application.sme-application', ({
           html: welcomeEmailTemplate,
         });
 
-        ctx.status = 200; // Force 200 OK
+        ctx.status = 200;
         return ctx.body = {
           message: `Welcome invitation mail send to ${email}`
         };
@@ -102,7 +101,6 @@ module.exports = createCoreController('api::sme-application.sme-application', ({
     }
 
     try {
-      // 2. Define the HTML Email Template
       const emailTemplate = `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #E5E7EB; border-radius: 8px; color: #333;">
           <h2 style="color: #10B981; border-bottom: 2px solid #10B981; padding-bottom: 10px;">Interview Invitation - SME Position</h2>
