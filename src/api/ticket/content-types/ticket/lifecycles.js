@@ -1,41 +1,30 @@
 module.exports = {
   async afterCreate(event) {
-
-    const { result } = event; // The newly created entry's data
+    const { result } = event;
 
     try {
-      // 1. Get the newly submitted data
-      const entryTitle = 'New enquiry form submission.';
+      // 1. Define the 'from' address using the new recommended syntax
+      const defaultFrom = strapi.config.get('plugin::email.settings.defaultFrom');
 
-      // 2. Define the email payload
-      const emailOptions = {
-        to: 'ajaythekkiniyi@gmail.com',
-        from: strapi.config.get('plugin.email.settings.defaultFrom'), // ⬅️ Automatically uses your 'onboarding@resend.dev'
-        subject: `${entryTitle}`,
-        text: `A new form submission has been received.
-
-Title: ${entryTitle}
-ID: ${result.id}
-
----
-View the submission in the Strapi admin panel.
-`,
+      await strapi.plugins.email.services.email.send({
+        to: 'smeoncallofficial@gmail.com',
+        from: defaultFrom, 
+        subject: `New Ticket: ${result.topic}`,
         html: `
-          <h1>A New Submission Has Arrived!</h1>
-          <p>Details of the new entry:</p>
-          <ul>
-            <li><strong>Title/Name:</strong> ${entryTitle}</li>
-            <li><strong>ID:</strong> ${result.id}</li>
-            </ul>
-          <p>Please log into the Strapi admin panel to review the full details.</p>
+          <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee;">
+            <h2 style="color: #2563eb;">New Ticket Created</h2>
+            <p><strong>User:</strong> ${result.username}</p>
+            <p><strong>Topic:</strong> ${result.topic}</p>
+            <p><strong>Urgency:</strong> ${result.urgency}</p>
+            <hr />
+            <p><strong>The Problem Statement:</strong></p>
+            <p>${result.problemStatement}</p>
+            <br />
+          </div>
         `,
-      };
-
-      // 3. Send the email using the Strapi Email Plugin
-      await strapi.plugins.email.services.email.send(emailOptions);
-
+      });
     } catch (err) {
-      // Log any errors if the email fails to send
+      strapi.log.error('Email Plugin Error:', err);
     }
   },
 };

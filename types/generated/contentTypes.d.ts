@@ -791,8 +791,12 @@ export interface ApiSmeApplicationSmeApplication
     draftAndPublish: true;
   };
   attributes: {
-    businessEmail: Schema.Attribute.Email & Schema.Attribute.Required;
-    businessNumber: Schema.Attribute.BigInteger & Schema.Attribute.Required;
+    businessEmail: Schema.Attribute.Email &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    businessNumber: Schema.Attribute.BigInteger &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     coverLetter: Schema.Attribute.Media<'files'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -907,7 +911,7 @@ export interface ApiTermsAndConditionTermsAndCondition
 export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
   collectionName: 'tickets';
   info: {
-    displayName: 'Basic Enquiry';
+    displayName: 'Ticket';
     pluralName: 'tickets';
     singularName: 'ticket';
   };
@@ -916,27 +920,24 @@ export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
   };
   attributes: {
     attachments: Schema.Attribute.Media<'images' | 'files', true>;
-    businessEmail: Schema.Attribute.Email;
-    businessNumber: Schema.Attribute.BigInteger;
-    company: Schema.Attribute.String;
+    budgetRange: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    enquiry: Schema.Attribute.Text;
-    field: Schema.Attribute.String;
-    firstName: Schema.Attribute.String;
-    lastName: Schema.Attribute.String;
+    email: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::ticket.ticket'
     > &
       Schema.Attribute.Private;
-    location: Schema.Attribute.String;
+    problemStatement: Schema.Attribute.Text & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    topic: Schema.Attribute.Text & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    urgency: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 

@@ -24,11 +24,13 @@
     },
     "businessEmail": {
       "type": "email",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "businessNumber": {
       "type": "biginteger",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "location": {
       "type": "string",

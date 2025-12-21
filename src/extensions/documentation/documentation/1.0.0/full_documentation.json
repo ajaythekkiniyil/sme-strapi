@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-12-21T04:18:22.462Z"
+    "x-generation-date": "2025-12-21T10:18:57.986Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -13594,33 +13594,28 @@
         ],
         "properties": {
           "data": {
+            "required": [
+              "email",
+              "topic",
+              "problemStatement",
+              "budgetRange",
+              "urgency"
+            ],
             "type": "object",
             "properties": {
-              "firstName": {
+              "email": {
                 "type": "string"
               },
-              "lastName": {
+              "topic": {
                 "type": "string"
               },
-              "company": {
+              "problemStatement": {
                 "type": "string"
               },
-              "businessNumber": {
-                "type": "string",
-                "pattern": "^\\d*$",
-                "example": "123456789"
-              },
-              "businessEmail": {
-                "type": "string",
-                "format": "email"
-              },
-              "location": {
+              "budgetRange": {
                 "type": "string"
               },
-              "field": {
-                "type": "string"
-              },
-              "enquiry": {
+              "urgency": {
                 "type": "string"
               },
               "attachments": {
@@ -13695,6 +13690,13 @@
       },
       "Ticket": {
         "type": "object",
+        "required": [
+          "email",
+          "topic",
+          "problemStatement",
+          "budgetRange",
+          "urgency"
+        ],
         "properties": {
           "id": {
             "type": "number"
@@ -13702,31 +13704,19 @@
           "documentId": {
             "type": "string"
           },
-          "firstName": {
+          "email": {
             "type": "string"
           },
-          "lastName": {
+          "topic": {
             "type": "string"
           },
-          "company": {
+          "problemStatement": {
             "type": "string"
           },
-          "businessNumber": {
-            "type": "string",
-            "pattern": "^\\d*$",
-            "example": "123456789"
-          },
-          "businessEmail": {
-            "type": "string",
-            "format": "email"
-          },
-          "location": {
+          "budgetRange": {
             "type": "string"
           },
-          "field": {
-            "type": "string"
-          },
-          "enquiry": {
+          "urgency": {
             "type": "string"
           },
           "attachments": {
@@ -14378,31 +14368,19 @@
                 "documentId": {
                   "type": "string"
                 },
-                "firstName": {
+                "email": {
                   "type": "string"
                 },
-                "lastName": {
+                "topic": {
                   "type": "string"
                 },
-                "company": {
+                "problemStatement": {
                   "type": "string"
                 },
-                "businessNumber": {
-                  "type": "string",
-                  "pattern": "^\\d*$",
-                  "example": "123456789"
-                },
-                "businessEmail": {
-                  "type": "string",
-                  "format": "email"
-                },
-                "location": {
+                "budgetRange": {
                   "type": "string"
                 },
-                "field": {
-                  "type": "string"
-                },
-                "enquiry": {
+                "urgency": {
                   "type": "string"
                 },
                 "attachments": {

@@ -4,37 +4,33 @@
   "info": {
     "singularName": "ticket",
     "pluralName": "tickets",
-    "displayName": "Basic Enquiry"
+    "displayName": "Ticket"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "firstName": {
+    "email": {
       "type": "string",
-      "required": false
+      "required": true,
+      "unique": false
     },
-    "lastName": {
-      "type": "string"
+    "topic": {
+      "type": "text",
+      "required": true
     },
-    "company": {
-      "type": "string"
+    "problemStatement": {
+      "type": "text",
+      "required": true
     },
-    "businessNumber": {
-      "type": "biginteger"
+    "budgetRange": {
+      "type": "string",
+      "required": true
     },
-    "businessEmail": {
-      "type": "email"
-    },
-    "location": {
-      "type": "string"
-    },
-    "field": {
-      "type": "string"
-    },
-    "enquiry": {
-      "type": "text"
+    "urgency": {
+      "type": "string",
+      "required": true
     },
     "attachments": {
       "type": "media",
