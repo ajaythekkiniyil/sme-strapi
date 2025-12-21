@@ -120,17 +120,20 @@ module.exports = {
       });
 
     // Create verified user
-    await strapi
+    const userService = strapi
       .plugin('users-permissions')
-      .service('user')
-      .add({
-        email,
-        username,
-        password,
-        confirmed: true,
-        customRole: 'user',
-        role: userRole.id
-      });
+      .service('user');
+
+    const newUser = await userService.add({
+      username,
+      email,
+      password,
+      provider: 'local',
+      confirmed: true,
+      blocked: false,
+      role: userRole.id,
+      customRole: 'user'
+    });
 
     ctx.send({ status: '200' });
   }
