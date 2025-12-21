@@ -13,7 +13,7 @@ module.exports = {
         html: `
           <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee;">
             <h2 style="color: #2563eb;">New Ticket Created</h2>
-            <p><strong>User:</strong> ${result.username}</p>
+            <p><strong>User:</strong> ${result.email}</p>
             <p><strong>Topic:</strong> ${result.topic}</p>
             <p><strong>Urgency:</strong> ${result.urgency}</p>
             <hr />
