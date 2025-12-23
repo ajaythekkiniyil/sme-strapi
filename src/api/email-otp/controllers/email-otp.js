@@ -22,7 +22,7 @@ module.exports = {
       .findOne({ where: { email } });
 
     if (existingUser) {
-      return ctx.send({ message: 'OTP sent if email exists' });
+      return ctx.send({ message: 'email already exist' });
     }
 
     const otp = generateOtp();
