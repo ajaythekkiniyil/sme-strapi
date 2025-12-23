@@ -7,7 +7,7 @@ module.exports = {
       const defaultFrom = strapi.config.get('plugin::email.settings.defaultFrom');
 
       await strapi.plugins.email.services.email.send({
-        to: 'smeoncallofficial@gmail.com',
+        to: process.env.ADMIN_EMAIL_ADDRESS,
         from: defaultFrom, 
         subject: `New Ticket: ${result.topic}`,
         html: `
