@@ -919,6 +919,8 @@ export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    assignedSME: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Not Assigned'>;
     attachments: Schema.Attribute.Media<'images' | 'files', true>;
     budgetRange: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
@@ -931,6 +933,8 @@ export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
       'api::ticket.ticket'
     > &
       Schema.Attribute.Private;
+    paymentStatus: Schema.Attribute.Enumeration<['pending', 'paid']> &
+      Schema.Attribute.DefaultTo<'pending'>;
     problemStatement: Schema.Attribute.Text & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     topic: Schema.Attribute.Text & Schema.Attribute.Required;
@@ -938,6 +942,9 @@ export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     urgency: Schema.Attribute.String & Schema.Attribute.Required;
+    username: Schema.Attribute.String & Schema.Attribute.Required;
+    verifiedStatus: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
   };
 }
 

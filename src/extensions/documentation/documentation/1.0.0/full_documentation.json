@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-12-23T10:52:13.162Z"
+    "x-generation-date": "2025-12-24T10:32:50.740Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -13595,6 +13595,7 @@
         "properties": {
           "data": {
             "required": [
+              "username",
               "email",
               "topic",
               "problemStatement",
@@ -13603,6 +13604,9 @@
             ],
             "type": "object",
             "properties": {
+              "username": {
+                "type": "string"
+              },
               "email": {
                 "type": "string"
               },
@@ -13631,6 +13635,19 @@
                   ],
                   "example": "string or id"
                 }
+              },
+              "verifiedStatus": {
+                "type": "boolean"
+              },
+              "paymentStatus": {
+                "type": "string",
+                "enum": [
+                  "pending",
+                  "paid"
+                ]
+              },
+              "assignedSME": {
+                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -13691,6 +13708,7 @@
       "Ticket": {
         "type": "object",
         "required": [
+          "username",
           "email",
           "topic",
           "problemStatement",
@@ -13702,6 +13720,9 @@
             "type": "number"
           },
           "documentId": {
+            "type": "string"
+          },
+          "username": {
             "type": "string"
           },
           "email": {
@@ -14320,6 +14341,19 @@
               }
             }
           },
+          "verifiedStatus": {
+            "type": "boolean"
+          },
+          "paymentStatus": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "paid"
+            ]
+          },
+          "assignedSME": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -14366,6 +14400,9 @@
                   "type": "number"
                 },
                 "documentId": {
+                  "type": "string"
+                },
+                "username": {
                   "type": "string"
                 },
                 "email": {
@@ -14514,6 +14551,19 @@
                       }
                     }
                   }
+                },
+                "verifiedStatus": {
+                  "type": "boolean"
+                },
+                "paymentStatus": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "paid"
+                  ]
+                },
+                "assignedSME": {
+                  "type": "string"
                 },
                 "createdAt": {
                   "type": "string",

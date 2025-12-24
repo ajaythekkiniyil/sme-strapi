@@ -11,6 +11,10 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "username": {
+      "type": "string",
+      "required": true
+    },
     "email": {
       "type": "string",
       "required": true,
@@ -39,6 +43,23 @@
         "images",
         "files"
       ]
+    },
+    "verifiedStatus": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "paymentStatus": {
+      "type": "enumeration",
+      "default": "pending",
+      "enum": [
+        "pending",
+        "paid"
+      ]
+    },
+    "assignedSME": {
+      "type": "string",
+      "default": "Not Assigned"
     }
   }
 }
