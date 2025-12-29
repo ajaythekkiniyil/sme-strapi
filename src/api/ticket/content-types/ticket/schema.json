@@ -11,15 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "username": {
-      "type": "string",
-      "required": true
-    },
-    "email": {
-      "type": "string",
-      "required": true,
-      "unique": false
-    },
     "topic": {
       "type": "text",
       "required": true
@@ -57,9 +48,12 @@
         "paid"
       ]
     },
-    "assignedSME": {
+    "ticketCreatedBy": {
       "type": "string",
-      "default": "Not Assigned"
+      "required": true
+    },
+    "assignedSME": {
+      "type": "string"
     }
   }
 }
