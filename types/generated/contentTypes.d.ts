@@ -442,6 +442,34 @@ export interface ApiCareersPageCareersPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiChatChat extends Struct.CollectionTypeSchema {
+  collectionName: 'chats';
+  info: {
+    displayName: 'Chat';
+    pluralName: 'chats';
+    singularName: 'chat';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::chat.chat'> &
+      Schema.Attribute.Private;
+    message: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    receiver: Schema.Attribute.String;
+    sender: Schema.Attribute.String;
+    ticketId: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiComplainsPageComplainsPage extends Struct.SingleTypeSchema {
   collectionName: 'complains_pages';
   info: {
@@ -919,14 +947,12 @@ export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    assignedSME: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Not Assigned'>;
+    assignedSME: Schema.Attribute.String;
     attachments: Schema.Attribute.Media<'images' | 'files', true>;
     budgetRange: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    email: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -937,12 +963,12 @@ export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
       Schema.Attribute.DefaultTo<'pending'>;
     problemStatement: Schema.Attribute.Text & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    ticketCreatedBy: Schema.Attribute.String & Schema.Attribute.Required;
     topic: Schema.Attribute.Text & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     urgency: Schema.Attribute.String & Schema.Attribute.Required;
-    username: Schema.Attribute.String & Schema.Attribute.Required;
     verifiedStatus: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<false>;
   };
@@ -1467,6 +1493,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::careers-page.careers-page': ApiCareersPageCareersPage;
+      'api::chat.chat': ApiChatChat;
       'api::complains-page.complains-page': ApiComplainsPageComplainsPage;
       'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
       'api::email-otp.email-otp': ApiEmailOtpEmailOtp;
