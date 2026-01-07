@@ -28,7 +28,7 @@
       "unique": true
     },
     "businessNumber": {
-      "type": "biginteger",
+      "type": "string",
       "required": true,
       "unique": true
     },

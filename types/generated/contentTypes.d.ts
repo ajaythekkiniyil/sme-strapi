@@ -822,7 +822,7 @@ export interface ApiSmeApplicationSmeApplication
     businessEmail: Schema.Attribute.Email &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
-    businessNumber: Schema.Attribute.BigInteger &
+    businessNumber: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     coverLetter: Schema.Attribute.Media<'files'>;
@@ -947,7 +947,8 @@ export interface ApiTicketTicket extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    assignedSME: Schema.Attribute.String;
+    assignedSME: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Not Assigned'>;
     attachments: Schema.Attribute.Media<'images' | 'files', true>;
     budgetRange: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;

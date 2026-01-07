@@ -53,7 +53,8 @@
       "required": true
     },
     "assignedSME": {
-      "type": "string"
+      "type": "string",
+      "default": "Not Assigned"
     }
   }
 }
