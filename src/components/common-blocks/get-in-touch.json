@@ -16,7 +16,7 @@
     },
     "location": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "email": {
       "type": "email",
@@ -24,7 +24,7 @@
     },
     "phone": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "image": {
       "type": "media",

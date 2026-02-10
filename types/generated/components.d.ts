@@ -42,8 +42,8 @@ export interface CommonBlocksGetInTouch extends Struct.ComponentSchema {
     description: Schema.Attribute.String & Schema.Attribute.Required;
     email: Schema.Attribute.Email & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'>;
-    location: Schema.Attribute.String & Schema.Attribute.Required;
-    phone: Schema.Attribute.String & Schema.Attribute.Required;
+    location: Schema.Attribute.String;
+    phone: Schema.Attribute.String;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'Get in Touch'>;
