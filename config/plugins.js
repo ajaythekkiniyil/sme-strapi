@@ -1,8 +1,3 @@
-console.log("KEY:", process.env);
-console.log("KEY:", process.env.R2_ACCESS_KEY_ID);
-console.log("KEY:", process.env.R2_ACCESS_KEY_ID);
-console.log("KEY:", process.env.R2_ACCESS_KEY_ID);
-
 module.exports = ({ env }) => ({
   // 1. Documentation Plugin
   'documentation': {
