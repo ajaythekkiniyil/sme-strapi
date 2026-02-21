@@ -145,36 +145,4 @@ module.exports = createCoreController('api::sme-application.sme-application', ({
     }
   },
 
-  // Override the default delete action
-  async delete(ctx) {
-    try {
-      const documentId = ctx.params.id;
-
-      if (!documentId) {
-        return ctx.badRequest('Missing documentId');
-      }
-
-      const existingEntry = await strapi.db
-        .query('api::sme-application.sme-application')
-        .findOne({ where: { documentId } });
-
-      if (!existingEntry) {
-        return ctx.notFound('SME application not found');
-      }
-
-      await strapi.db
-        .query('api::sme-application.sme-application')
-        .delete({ where: { documentId } });
-
-      ctx.status = 200;
-      ctx.body = {
-        message: `SME application deleted successfully`,
-      };
-
-    } catch (error) {
-      strapi.log.error('Delete failed:', error);
-      return ctx.internalServerError('Failed to delete SME application');
-    }
-  }
-  
 }));
